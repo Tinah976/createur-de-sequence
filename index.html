@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Séquences Pédagogiques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #34495e; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 20px; }
+        grop { display: block; margin-bottom: 15px; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; }
+        select, input[type="text"], input[type="number"] {
+            width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;
+        }
+        .checkbox-group {
+            background: #f9f9f9; padding: 10px; border-radius: 4px; border: 1px solid #eee; margin-bottom: 15px;
+        }
+        .checkbox-item { margin-bottom: 8px; display: flex; align-items: flex-start; }
+        .checkbox-item input { margin-right: 10px; margin-top: 3px; }
+        button {
+            background-color: #27ae60; color: white; padding: 12px 20px; border: none; border-radius: 4px;
+            cursor: pointer; font-size: 16px; width: 100%; font-weight: bold; margin-top: 15px;
+        }
+        button:hover { background-color: #219653; }
+        #aperçu {
+            margin-top: 30px; padding: 20px; border: 2px dashed #bdc3c7; background: #fff; display: none;
+        }
+        .print-btn { background-color: #2980b9; margin-top: 10px; }
+        .print-btn:hover { background-color: #2471a3; }
+        
+        /* Style pour l'impression type Eduscol */
+        @media print {
+            body * { visibility: hidden; }
+            #aperçu, #aperçu * { visibility: visible; }
+            #aperçu { position: absolute; left: 0; top: 0; width: 100%; border: none; padding: 0; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mon Assistant Séquence Musique</h1>
+    
+    <h2>1. Informations Générales</h2>
+    <div class="form-group">
+        <label>Niveau :</label>
+        <select id="niveau">
+            <option value="6ème (Cycle 3)">6ème (Cycle 3)</option>
+            <option value="5ème (Cycle 4)">5ème (Cycle 4)</option>
+            <option value="4ème (Cycle 4)">4ème (Cycle 4)</option>
+            <option value="3ème (Cycle 4)" selected>3ème (Cycle 4)</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Numéro de séquence :</label>
+        <input type="number" id="numSeq" value="3">
+    </div>
+    <div class="form-group">
+        <label>Durée (en séances) :</label>
+        <input type="number" id="duree" value="6">
+    </div>
+    <div class="form-group">
+        <label>Titre de la séquence :</label>
+        <input type="text" id="titre" value="De l'interprète à l'artiste">
+    </div>
+    <div class="form-group">
+        <label>Problématique :</label>
+        <input type="text" id="problematique" value="En quoi la présence scénique et vocale définit-elle l'identité d'un artiste face à son public ?">
+    </div>
+
+    <h2>2. Objectifs et Attendus de fin de cycle</h2>
+    <div class="checkbox-group" id="objectifs">
+        <div class="checkbox-item">
+            <input type="checkbox" id="obj1" value="Objectif 1 : Mobiliser les techniques vocales et corporelles au service d'un projet d'interprétation ou de création." checked>
+            <label for="obj1"><b>Obj 1 :</b> Mobiliser les techniques vocales et corporelles...</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="obj2" value="Objectif 2 : Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références." checked>
+            <label for="obj2"><b>Obj 2 :</b> Identifier, décrire, commenter...</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="obj4" value="Objectif 4 : Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre." checked>
+            <label for="obj4"><b>Obj 4 :</b> Présenter et justifier des choix d'interprétation...</label>
+        </div>
+    </div>
+
+    <h2>3. Domaines Techniques</h2>
+    <div class="checkbox-group" id="domaines">
+        <div class="checkbox-item">
+            <input type="checkbox" id="tech1" value="Geste vocal : Assurer la posture (enracinement, axe vertical, ouverture, décontraction)." checked>
+            <label for="tech1"><b>Geste vocal :</b> Posture, enracinement...</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="tech2" value="Geste vocal : Moduler son articulation (débit, consonnes percussives...), son accentuation, son phrasé." checked>
+            <label for="tech2"><b>Geste vocal :</b> Moduler son articulation...</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="tech3" value="Style : Une musique de spectacle vivant (interprètes et auditeurs en présence)." checked>
+            <label for="tech3"><b>Style :</b> Spectacle vivant...</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="tech4" value="Dynamique : Différentes nuances (de pianissimo à fortissimo)." checked>
+            <label for="tech4"><b>Dynamique :</b> Différentes nuances...</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="tech5" value="Timbre et espace : Le registre, la hauteur." checked>
+            <label for="tech5"><b>Timbre et espace :</b> Registre, hauteur...</label>
+        </div>
+    </div>
+
+    <button onclick="genererSequence()">Créer la fiche de séquence</button>
+    
+    <div id="aperçu">
+        <div id="contenuFiche"></div>
+        <button class="print-btn no-print" onclick="window.print()">Imprimer ou Enregistrer en PDF</button>
+    </div>
+</div>
+
+<script>
+function genererSequence() {
+    // Récupération des données du formulaire
+    const niveau = document.getElementById('niveau').value;
+    const numSeq = document.getElementById('numSeq').value;
+    const duree = document.getElementById('duree').value;
+    const titre = document.getElementById('titre').value;
+    const problematique = document.getElementById('problematique').value;
+
+    // Construction de la fiche type Éduscol
+    let htmlFiche = `
+        <h2 style="text-align: center; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 5px;">SÉQUENCE PÉDAGOGIQUE MUSICALE</h2>
+        
+        <h3>INFORMATIONS GÉNÉRALES</h3>
+        <p><b>Niveau :</b> ${niveau}</p>
+        <p><b>Séquence n° :</b> ${numSeq} &nbsp;&nbsp;&nbsp;&nbsp; <b>Durée :</b> ${duree} séances</p>
+        <p><b>Titre :</b> ${titre}</p>
+        <p><b>Problématique :</b> ${problematique}</p>
+        
+        <h3>OBJECTIFS ET ATTENDUS DE FIN DE CYCLE</h3>
+    `;
+
+    // Récupérer les objectifs cochés
+    const listObj = document.getElementById('objectifs').querySelectorAll('input[type="checkbox"]');
+    listObj.forEach(cb => {
+        if(cb.checked) { htmlFiche += `<p style="margin-left: 15px;">✓ ${cb.value}</p>`; }
+    });
+
+    htmlFiche += `<h3>COMPÉTENCES ET DOMAINES TECHNIQUES TRAVAILLÉS</h3>`;
+
+    // Récupérer les domaines techniques cochés
+    const listTech = document.getElementById('domaines').querySelectorAll('input[type="checkbox"]');
+    listTech.forEach(cb => {
+        if(cb.checked) { htmlFiche += `<p style="margin-left: 15px;">✓ ${cb.value}</p>`; }
+    });
+
+    // Afficher le résultat
+    document.getElementById('contenuFiche').innerHTML = htmlFiche;
+    document.getElementById('aperçu').style.display = 'block';
+    
+    // Défiler automatiquement vers l'aperçu
+    document.getElementById('aperçu').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
