@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Générateur Universel de Séquence Pédagogique</title>
+    <title>Générateur de Séquence Pédagogique - Éducation Musicale</title>
     <style>
-        /* Style de l'interface de travail */
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 30px; background-color: #f1f5f9; color: #334155; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 30px; background-color: #f8fafc; color: #334155; }
         .container { max-width: 950px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        h1 { color: #0f172a; text-align: center; font-size: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; }
-        h2 { color: #2563eb; margin-top: 35px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; font-size: 15px; text-transform: uppercase; }
-        h3 { color: #1e293b; font-size: 12px; margin-top: 15px; margin-bottom: 8px; text-transform: uppercase; background: #f8fafc; padding: 6px 10px; border-left: 3px solid #cbd5e1; }
+        h1 { color: #1e293b; text-align: center; font-size: 22px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 25px; text-transform: uppercase; }
+        h2 { color: #1d4ed8; margin-top: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; font-size: 15px; text-transform: uppercase; }
+        h3 { color: #475569; font-size: 13px; margin-top: 15px; margin-bottom: 5px; text-transform: uppercase; background: #f1f5f9; padding: 4px 8px; }
         .form-group { margin-bottom: 15px; }
         label { font-weight: bold; display: block; margin-bottom: 5px; font-size: 13px; color: #1e293b; }
-        select, input[type="text"], input[type="number"], textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; font-size: 13px; font-family: inherit; }
-        textarea { height: 90px; resize: vertical; }
-        .checkbox-group { background: #fafafa; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; margin-bottom: 15px; max-height: 250px; overflow-y: auto; }
-        .checkbox-item { margin-bottom: 8px; display: flex; align-items: flex-start; font-size: 12.5px; line-height: 1.4; }
-        .checkbox-item input { margin-right: 10px; margin-top: 2px; cursor: pointer; }
-        .cycle-section { display: none; }
-        .cycle-active { display: block; }
+        select, input[type="text"], input[type="number"], textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box; font-size: 13px; }
+        textarea { height: 80px; resize: vertical; }
+        .checkbox-group { background: #fafafa; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; margin-bottom: 15px; max-height: 300px; overflow-y: auto; }
+        .checkbox-item { margin-bottom: 8px; display: flex; align-items: flex-start; font-size: 13px; }
+        .checkbox-item input { margin-right: 10px; margin-top: 3px; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .btn-generer { background-color: #0f172a; color: white; padding: 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; width: 100%; font-weight: bold; margin-top: 30px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.2s; }
+        .btn-generer { background-color: #0f172a; color: white; padding: 14px; border: none; border-radius: 4px; cursor: pointer; font-size: 15px; width: 100%; font-weight: bold; margin-top: 30px; text-transform: uppercase; letter-spacing: 0.5px; }
         .btn-generer:hover { background-color: #1e293b; }
 
-        /* Style Brut & Officiel du Rendu (Conforme à vos captures) */
+        /* Style Épuré du Rendu Final (Exactement fidèle à vos photos d'archive) */
         #aperçu { margin-top: 40px; padding: 40px 0; border-top: 2px dashed #cbd5e1; display: none; background: #fff; color: #000; }
-        .rendu-document { font-family: Arial, sans-serif; line-height: 1.6; max-width: 750px; margin: 0 auto; padding: 10px; }
-        .rendu-document h2 { color: #000; border: none; padding: 0; margin: 25px 0 8px 0; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
-        .rendu-document p { margin: 3px 0; font-size: 13px; }
-        .rendu-document .item-choix { margin: 4px 0 4px 20px; font-size: 13px; list-style: none; padding-left: 0; text-align: justify; }
+        .rendu-document { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 10px; }
+        .rendu-document h2 { color: #000; border: none; padding: 0; margin: 25px 0 10px 0; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .rendu-document p { margin: 4px 0; font-size: 13px; }
+        .rendu-document .item-choix { margin: 6px 0 6px 15px; font-size: 13px; list-style: none; padding-left: 0; }
         .rendu-document .item-choix::before { content: "⁒ "; font-weight: normal; margin-right: 5px; }
-        .rendu-document .sous-titre-interne { font-weight: bold; font-size: 13px; margin-top: 12px; margin-bottom: 2px; display: block; text-transform: none; }
-        .rendu-document .footer-doc { margin-top: 60px; border-top: 1px solid #000; padding-top: 10px; font-size: 11px; color: #333; }
-        .btn-imprimer { background-color: #1e3a8a; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; margin-top: 25px; text-transform: uppercase; }
+        .rendu-document .sous-titre-interne { font-weight: bold; font-size: 13px; margin-top: 12px; margin-bottom: 4px; display: block; }
+        .rendu-document .footer-doc { margin-top: 50px; border-top: 1px solid #ddd; padding-top: 10px; font-size: 11px; color: #555; }
+        
+        .btn-imprimer { background-color: #2563eb; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold; margin-top: 20px; text-transform: uppercase; }
         
         @media print {
             .no-print { display: none !important; }
@@ -45,188 +43,222 @@
 <body>
 
 <div class="container no-print">
-    <h1>Créateur Universel de Fiche de Séquence</h1>
+    <h1>Générateur de Séquence Pédagogique (Cycle 4)</h1>
     
     <!-- 1. INFORMATIONS GÉNÉRALES -->
     <h2>1. Informations Générales</h2>
     <div class="grid-2">
         <div class="form-group">
             <label>Niveau :</label>
-            <select id="niveau" onchange="changerCycle()">
-                <option value="6ème" data-cycle="3">6ème</option>
-                <option value="5ème" data-cycle="4">5ème</option>
-                <option value="4ème" data-cycle="4">4ème</option>
-                <option value="3ème" data-cycle="4" selected>3ème</option>
+            <select id="niveau">
+                <option value="5ème">5ème</option>
+                <option value="4ème">4ème</option>
+                <option value="3ème" selected>3ème</option>
             </select>
         </div>
         <div class="form-group">
             <label>Séquence n° :</label>
-            <input type="text" id="numSeq" placeholder="Ex: 1, 2, 3...">
+            <input type="text" id="numSeq" value="3">
         </div>
     </div>
     <div class="grid-2">
         <div class="form-group">
             <label>Durée (en séances) :</label>
-            <input type="number" id="duree" placeholder="Ex: 6">
+            <input type="number" id="duree" value="6">
         </div>
         <div class="form-group">
             <label>Titre de la séquence :</label>
-            <input type="text" id="titre" placeholder="Saisir le titre de la séquence...">
+            <input type="text" id="titre" value="De l'interprète à l'artiste">
         </div>
     </div>
     <div class="form-group">
         <label>Problématique :</label>
-        <textarea id="problematique" placeholder="Saisir la problématique générale..."></textarea>
+        <textarea id="problematique">En quoi la présence scénique et vocale définit-elle l'identité d'un artiste face à son public ?</textarea>
     </div>
 
-    <!-- 2. OBJECTIFS ET ATTENDUS DE FIN DE CYCLE -->
-    <h2>2. Objectifs et Attendus de fin de cycle</h2>
-    
-    <!-- BLOCK CYCLE 3 -->
-    <div id="bloc-cycle3-att" class="checkbox-group cycle-section">
-        <h3>Chanter ou interpréter un chant de mémoire avec expression</h3>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Chanter ou interpréter un chant de mémoire avec expression" value="À en tirer parti pour moduler son expression (justesse, posture)"><label>À en tirer parti pour moduler son expression (justesse, posture)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Chanter ou interpréter un chant de mémoire avec expression" value="Tenir sa place dans un effectif choral à 2 voix"><label>Tenir sa place dans un effectif choral à 2 voix</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Chanter ou interpréter un chant de mémoire avec expression" value="Restituer le rythme, la mélodie et le texte de manière synchrone"><label>Restituer le rythme, la mélodie et le texte de manière synchrone</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Chanter ou interpréter un chant de mémoire avec expression" value="Adapter son émission vocale aux exigences du collectif"><label>Adapter son émission vocale aux exigences du collectif</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Chanter ou interpréter un chant de mémoire avec expression" value="Suivre les indications de direction du chef de chœur"><label>Suivre les indications de direction du chef de chœur</label></div>
-        
-        <h3>Écouter de la musique en manifestant une attention soutenue</h3>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écouter de la musique en manifestant une attention soutenue" value="À repérer des éléments structurels simples"><label>À repérer des éléments structurels simples (intro, couplet, refrain...)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écouter de la musique en manifestant une attention soutenue" value="À identifier des caractéristiques stylistiques marquantes"><label>À identifier des caractéristiques stylistiques marquantes</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écouter de la musique en manifestant une attention soutenue" value="Distinguer les principales familles d'instruments"><label>Distinguer les principales familles d'instruments</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écouter de la musique en manifestant une attention soutenue" value="Repérer les variations de dynamique et de tempo"><label>Repérer les variations de dynamique et de tempo</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écouter de la musique en manifestant une attention soutenue" value="Associer une œuvre à un grand repère historique ou culturel"><label>Associer une œuvre à un grand repère historique ou culturel</label></div>
-    </div>
+    <!-- 2. ATTENDUS DE FIN DE CYCLE 4 -->
+    <h2>2. Attendus de fin de cycle 4</h2>
+    <div class="checkbox-group">
+        <h3>Attendu 1 — Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création</h3>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Identifier, choisir et mobiliser les techniques vocales et corporelles au service du sens et de l'expression" checked><label>Identifier, choisir et mobiliser les techniques vocales et corporelles...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Définir les caractéristiques musicales d'un projet, puis en assurer la mise en œuvre en mobilisant les ressources adaptées" checked><label>Définir les caractéristiques musicales d'un projet...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Définir les caractéristiques expressives d'un projet, puis en assurer la mise en œuvre"><label>Définir les caractéristiques expressives d'un projet...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Réaliser des projets musicaux dans un cadre collectif (classe), en petit groupe ou individuellement"><label>Réaliser des projets musicaux dans un cadre collectif...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Tenir sa partie dans un contexte polyphonique"><label>Tenir sa partie dans un contexte polyphonique</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Interpréter un projet devant d'autres élèves et présenter les choix artistiques effectués"><label>Interpréter un projet devant d'autres élèves...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 1 — Mobiliser des techniques vocales et corporelles..." value="Reproduire et interpréter un modèle mélodique et rythmique"><label>Reproduire et interpréter un modèle mélodique et rythmique</label></div>
 
-    <!-- BLOCK CYCLE 4 -->
-    <div id="bloc-cycle4-att" class="checkbox-group cycle-section cycle-active">
-        <h3>Mobiliser des techniques vocales et corporelles au service d'un projet</h3>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" value="À en tirer parti pour moduler son expression (timbre, dynamique, phrasé, geste)"><label>À en tirer parti pour moduler son expression (timbre, dynamique, phrasé, geste)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" value="Réinvestir les acquis techniques hors du contexte d'apprentissage"><label>Réinvestir les acquis techniques hors du contexte d'apprentissage</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" value="Tenir sa partie de manière autonome au sein d'une polyphonie complexe"><label>Tenir sa partie de manière autonome au sein d'une polyphonie complexe</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" value="Contrôler sa justesse et son émission dans un environnement sonore dense"><label>Contrôler sa justesse et son émission dans un environnement sonore dense</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" value="Maîtriser les mécanismes de la respiration ventrale et du soutien"><label>Maîtriser les mécanismes de la respiration ventrale et du soutien</label></div>
-        
-        <h3>Identifier, décrire, commenter une organisation musicale complexe</h3>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" value="À décrire, identifier et caractériser les éléments constitutifs du phénomène musical"><label>À décrire, identifier et caractériser les éléments constitutifs du phénomène musical</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" value="Établir des liens précis entre la musique étudiée et d'autres domaines artistiques"><label>Établir des liens précis entre la musique étudiée et d'autres domaines artistiques</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" value="Analyser les formes architecturales d'une œuvre (rondo, variations, plans...)"><label>Analyser les formes architecturales d'une œuvre (rondo, variations, plans...)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" value="Distinguer les écritures et textures (homorythmie, contrepoint, polyphonie...)"><label>Distinguer les écritures et textures (homorythmie, contrepoint, polyphonie...)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" value="Situer l'œuvre dans son contexte sociopolitique, économique et technique"><label>Situer l'œuvre dans son contexte sociopolitique, économique et technique</label></div>
+        <h3>Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références</h3>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Analyser des œuvres musicales en utilisant un vocabulaire précis" checked><label>Analyser des œuvres musicales en utilisant un vocabulaire précis</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Situer et comparer des musiques de styles proches ou éloignés dans l'espace et/ou dans le temps" checked><label>Situer et comparer des musiques de styles proches ou éloignés...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Mobiliser des repères permettant d'identifier les principaux styles musicaux"><label>Mobiliser des repères permettant d'identifier les principaux styles</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Associer des références relevant d'autres domaines artistiques aux œuvres musicales étudiées"><label>Associer des références relevant d'autres domaines artistiques...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Identifier par comparaison les différences et ressemblances dans l'interprétation d'une œuvre donnée"><label>Identifier par comparaison les différences et ressemblances...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Percevoir et décrire les qualités artistiques et techniques d'un enregistrement"><label>Percevoir et décrire les qualités artistiques et techniques...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 2 — Identifier, décrire, commenter une organisation musicale complexe..." value="Manipuler plusieurs formes de representation graphique de la musique à l'aide d'outils numériques"><label>Manipuler plusieurs formes de représentation graphique...</label></div>
 
-        <h3>Présenter et justifier des choix d'interprétation, justifier un avis</h3>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre et défendre un point de vue" value="À respecter l'expression de la sensibilité de chacun"><label>À respecter l'expression de la sensibilité de chacun</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre et défendre un point de vue" value="Utiliser un vocabulaire technique adapté pour argumenter sa posture"><label>Utiliser un vocabulaire technique adapté pour argumenter sa posture</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre et défendre un point de vue" value="Formuler une critique constructive sur sa propre production ou celle de ses pairs"><label>Formuler une critique constructive sur sa propre production ou celle de ses pairs</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre et défendre un point de vue" value="Distinguer la valeur artistique d'une œuvre de son goût personnel"><label>Distinguer la valeur artistique d'une œuvre de son goût personnel</label></div>
+        <h3>Attendu 3 — Concevoir, créer et réaliser des pièces musicales en référence à des styles, des œuvres, des contraintes</h3>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 3 — Concevoir, créer et réaliser des pièces musicales..." value="Réutiliser certaines caractéristiques (style, technique) d'une œuvre connue pour nourrir son travail"><label>Réutiliser certaines caractéristiques d'une œuvre connue...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 3 — Concevoir, créer et réaliser des pièces musicales..." value="Concevoir, réaliser, arranger, pasticher une courte pièce préexistante, notamment à l'aide d'outils numériques"><label>Concevoir, réaliser, arranger, pasticher une courte pièce...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 3 — Concevoir, créer et réaliser des pièces musicales..." value="Identifier les leviers permettant d'améliorer et/ou modifier le travail de création entrepris"><label>Identifier les leviers permettant d'améliorer et/ou modifier...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 3 — Concevoir, créer et réaliser des pièces musicales..." value="Mobiliser à bon escient un système de codage pour organiser une création"><label>Mobiliser à bon escient un système de codage...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 3 — Concevoir, créer et réaliser des pièces musicales..." value="Réinvestir ses expériences personnelles de la création musicale pour écouter, comprendre et commenter celles des autres"><label>Réinvestir ses expériences personnelles de la création musicale...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 3 — Concevoir, créer et réaliser des pièces musicales..." value="S'autoévaluer à chaque étape du travail"><label>S'autoévaluer à chaque étape du travail</label></div>
+
+        <h3>Attendu 4 — Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre</h3>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Porter un regard critique sur sa production individuelle"><label>Porter un regard critique sur sa production individuelle</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Développer une critique constructive sur une production collective"><label>Développer une critique constructive sur une production collective</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Contribuer à l'élaboration collective de choix d'interprétation ou de création"><label>Contribuer à l'élaboration collective de choix d'interprétation...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Problématiser l'écoute d'une ou plusieurs œuvres" checked><label>Problématiser l'écoute d'une ou plusieurs œuvres</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Distinguer appréciation subjective et description objective" checked><label>Distinguer appréciation subjective et description objective</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Argumenter une critique adossée à une analyse objective"><label>Argumenter une critique adossée à une analyse objective</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Écouter et respecter le point de vue des autres et l'expression de leur sensibilité" checked><label>Écouter et respecter le point de vue des autres...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="S'enrichir de la diversité des goûts personnels et des esthétiques"><label>S'enrichir de la diversité des goûts personnels et des esthétiques</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Attendu 4 — Présenter et justifier des choix d'interprétation..." value="Distinguer les postures de créateur, d'interprète et d'auditeur"><label>Distinguer les postures de créateur, d'interprète et d'auditeur</label></div>
     </div>
 
     <!-- 3. COMPÉTENCES TRAVAILLÉES -->
     <h2>3. Compétences Travaillées</h2>
-    
-    <!-- BLOCK COMP CYCLE 3 -->
-    <div id="bloc-cycle3-comp" class="checkbox-group cycle-section">
-        <h3>Réaliser des projets musicaux</h3>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux" value="Chanter en s'harmonisant avec les autres"><label>Chanter en s'harmonisant avec les autres</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux" value="Tenir sa place au sein d'un collectif"><label>Tenir sa place au sein d'un collectif</label></div>
-        <h3>Écouter, comparer</h3>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Écouter, comparer et construire des repères" value="Acquérir les bases d'un lexique spécifique"><label>Acquérir les bases d'un lexique spécifique</label></div>
-    </div>
+    <div class="checkbox-group">
+        <h3>Compétence 1 — Réaliser des projets musicaux d'interprétation ou de création</h3>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 1 — Réaliser des projets musicaux d'interprétation ou de création" value="Définir les caractéristiques musicales d'un projet et en assurer la mise en œuvre" checked><label>Définir les caractéristiques musicales d'un projet et en assurer la mise en œuvre</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 1 — Réaliser des projets musicaux d'interprétation ou de création" value="Réaliser un projet (en groupe ou individuellement)" checked><label>Réaliser un projet (en groupe ou individuellement)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 1 — Réaliser des projets musicaux d'interprétation ou de création" value="Tenir sa partie dans un contexte polyphonique"><label>Tenir sa partie dans un contexte polyphonique</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 1 — Réaliser des projets musicaux d'interprétation ou de création" value="Interpréter un projet et présenter ses choix artistiques"><label>Interpréter un projet et présenter ses choix artistiques</label></div>
 
-    <!-- BLOCK COMP CYCLE 4 -->
-    <div id="bloc-cycle4-comp" class="checkbox-group cycle-section cycle-active">
-        <h3>Réaliser des projets musicaux d'interprétation ou de création</h3>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux d'interprétation ou de création" value="Réaliser des projets musicaux dans un cadre collectif (classe) en petit groupe ou en soliste"><label>Réaliser des projets musicaux dans un cadre collectif...</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux d'interprétation ou de création" value="Concevoir, réaliser et arranger des propositions musicales originales"><label>Concevoir, réaliser et arranger des propositions musicales originales</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux d'interprétation ou de création" value="Inventorier et exploiter les ressources expressives de la voix"><label>Inventorier et exploiter les ressources expressives de la voix</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux d'interprétation ou de création" value="Mettre en œuvre les règles de la création collective (écoute mutuelle, ajustement)"><label>Mettre en œuvre les règles de la création collective (écoute, ajustement)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Réaliser des projets musicaux d'interprétation ou de création" value="Intégrer des éléments scéniques ou corporels simples au projet"><label>Intégrer des éléments scéniques ou corporels simples au projet</label></div>
-        
-        <h3>Écouter, comparer, construire une culture musicale commune</h3>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Écouter, comparer, construire une culture musicale commune" value="Situer et comparer des musiques de styles proches ou éloignés dans l'espace et dans le temps pour construire des repères techniques et culturels"><label>Situer et comparer des musiques de styles proches ou éloignés dans l'espace et le temps</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Écouter, comparer, construire une culture musicale commune" value="Repérer des connexions entre les œuvres du passé et les musiques actuelles"><label>Repérer des connexions entre les œuvres du passé et les musiques actuelles</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Écouter, comparer, construire une culture musicale commune" value="Manipuler des concepts musicaux abstraits pour rendre compte de l'organisation sonore"><label>Manipuler des concepts musicaux abstraits pour rendre compte de l'organisation sonore</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Écouter, comparer, construire une culture musicale commune" value="Identifier le rôle de la technologie dans l'évolution des langages musicaux"><label>Identifier le rôle de la technologie dans l'évolution des langages musicaux</label></div>
-        
-        <h3>Échanger, partager, argumenter et débattre</h3>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Échanger, partager, argumenter et débattre" value="Perception : Respecter la sensibilité"><label>Perception : Respecter la sensibilité d'autrui</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Échanger, partager, argumenter et débattre" value="Développer une argumentation rigoureuse en s'appuyant sur des éléments musicaux tangibles"><label>Développer une argumentation rigoureuse en s'appuyant sur des indices musicaux</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Échanger, partager, argumenter et débattre" value="Accepter le pluralisme des goûts et des interprétations au sein du groupe"><label>Accepter le pluralisme des goûts et des interprétations au sein du groupe</label></div>
+        <h3>Compétence 2 — Écouter, comparer, construire une culture musicale commune</h3>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Mobiliser sa mémoire sur des objets musicaux longs et complexes"><label>Mobiliser sa mémoire sur des objets musicaux longs et complexes</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Analyser des œuvres avec un vocabulaire précis" checked><label>Analyser des œuvres avec un vocabulaire précis</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Identifier ressemblances/différences d'interprétation"><label>Identifier ressemblances/différences d'interprétation</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Situer et comparer des musiques dans l'espace et le temps" checked><label>Situer et comparer des musiques dans l'espace et le temps</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Mettre en lien caractéristiques musicales et contextes historiques/culturels" checked><label>Mettre en lien caractéristiques musicales et contextes...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Mobiliser des repères pour identifier les styles musicaux"><label>Mobiliser des repères pour identifier les styles musicaux</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Associer des références d'autres domaines artistiques aux œuvres"><label>Associer des références d'autres domaines artistiques aux œuvres</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Percevoir et décrire les qualités artistiques d'un enregistrement"><label>Percevoir et décrire les qualités artistiques d'un enregistrement</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 2 — Écouter, comparer, construire une culture musicale commune" value="Utiliser des représentations graphiques de la musique"><label>Utiliser des représentations graphiques de la musique</label></div>
+
+        <h3>Compétence 3 — Explorer, imaginer, créer et produire</h3>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Production)" value="Réutiliser les caractéristiques d'une œuvre connue"><label><b>[Prod]</b> Réutiliser les caractéristiques d'une œuvre connue</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Production)" value="Concevoir/arranger/pasticher une courte pièce (avec outils numériques)"><label><b>[Prod]</b> Concevoir/arranger/pasticher une courte pièce...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Production)" value="Identifier les leviers pour améliorer la création"><label><b>[Prod]</b> Identifier les leviers pour améliorer la création</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Production)" value="Mobiliser un système de codage graphique"><label><b>[Prod]</b> Mobiliser un système de codage graphique</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Production)" value="S'autoévaluer à chaque étape"><label><b>[Prod]</b> S'autoévaluer à chaque étape</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Perception)" value="Identifier et mobiliser des ressources documentaires"><label><b>[Percep]</b> Identifier et mobiliser des ressources documentaires</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Perception)" value="Réinvestir ses expériences de création pour écouter les autres"><label><b>[Percep]</b> Réinvestir ses expériences de création pour écouter les autres</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Perception)" value="Concevoir une playlist répondant à des objectifs artistiques"><label><b>[Percep]</b> Concevoir une playlist répondant à des objectifs...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 3 — Explorer, imaginer, créer et produire (Perception)" value="S'autoévaluer"><label><b>[Percep]</b> S'autoévaluer</label></div>
+
+        <h3>Compétence 4 — Échanger, partager, argumenter et débattre</h3>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Production)" value="Développer une critique constructive sur une production collective"><label><b>[Prod]</b> Développer une critique constructive sur une production collective</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Production)" value="Porter un regard critique sur sa production individuelle"><label><b>[Prod]</b> Porter un regard critique sur sa production individuelle</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Production)" value="Contribuer aux choix collectifs d'interprétation/création"><label><b>[Prod]</b> Contribuer aux choix collectifs d'interprétation/création</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Production)" value="Transférer les conclusions d'un débat sur un projet en cours"><label><b>[Prod]</b> Transférer les conclusions d'un débat sur un projet...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Perception)" value="Problématiser l'écoute d'une ou plusieurs œuvres" checked><label><b>[Percep]</b> Problématiser l'écoute d'une ou plusieurs œuvres</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Perception)" value="Distinguer appréciation subjective et description objective" checked><label><b>[Percep]</b> Distinguer appréciation subjective et description objective</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Perception)" value="Argumenter une critique adossée à une analyse objective" checked><label><b>[Percep]</b> Argumenter une critique adossée à une analyse objective</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Perception)" value="Distinguer les postures de créateur, interprète, auditeur" checked><label><b>[Percep]</b> Distinguer les postures de créateur, interprète, auditeur</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="compDet" data-parent="Compétence 4 — Échanger, partager, argumenter et débattre (Perception)" value="Respecter les droits d'auteur et l'utilisation de sons libres de droit" checked><label><b>[Percep]</b> Respecter les droits d'auteur et l'utilisation de sons libres...</label></div>
     </div>
 
     <!-- 4. DOMAINES TECHNIQUES -->
     <h2>4. Domaines Techniques</h2>
     <div class="checkbox-group">
-        <h3>Geste vocal</h3>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Geste vocal" value="Assurer la posture: enracinement, axe vertical, ouverture, décontraction"><label>Posture: enracinement, axe vertical, ouverture, décontraction</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Geste vocal" value="Moduler son articulation (débit, consonnes percussives...), son accentuation, son phrasé"><label>Moduler son articulation (débit, consonnes...), son accentuation, son phrasé</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Geste vocal" value="Gestion du souffle, de la colonne d'air et de la pression sous-glottique"><label>Gestion du souffle, de la colonne d'air et du soutien</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Geste vocal" value="Exploration et bascule entre les différents registres (voix de tête, voix de poitrine...)"><label>Exploration et bascule entre les différents registres vocaux</label></div>
-        
-        <h3>Style</h3>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Style" value="Une musique de spectacle vivant (interprètes et auditeurs en présence)"><label>Une musique de spectacle vivant (interprètes et auditeurs en présence)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Style" value="Une musique dans différentes interprétations ou arrangements"><label>Une musique dans différentes interprétations ou arrangements</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Style" value="Analyse des musiques de fonctions (rituels, propagande, cinéma, scène...)"><label>Musiques de fonctions (rituels, propagande, cinéma, scène...)</label></div>
-        
-        <h3>Dynamique</h3>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Dynamique" value="Différentes nuances (de pianissimo à fortissimo)"><label>Différentes nuances (de pianissimo à fortissimo)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Dynamique" value="Intensité stable ou contrastée"><label>Intensité stable ou contrastée</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Dynamique" value="Utilisation progressive des crescendos et decrescendos comme vecteurs expressifs"><label>Utilisation progressive des crescendos et decrescendos</label></div>
-        
-        <h3>Timbre et espace</h3>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Timbre et espace" value="Le registre, la hauteur"><label>Le registre, la hauteur</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Timbre et espace" value="Espace et densité sonore (du soliste à la formation chœur et orchestre etc.)"><label>Espace et densité sonore (du soliste au grand chœur/orchestre etc.)</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Timbre et espace" value="Caractérisation morphologique des sons (brillance, matité, grain, rugosité)"><label>Caractérisation morphologique des sons (brillance, matité, grain...)</label></div>
-        
-        <h3>Temps et rythme</h3>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Temps et rythme" value="Pulsation"><label>Pulsation</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Temps et rythme" value="Temps binaire et temps ternaire"><label>Temps binaire et temps ternaire</label></div>
-        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="Temps et rythme" value="Superposition de rythmes différents (polyrythmie, polymétrie)"><label>Superposition de rythmes différents (polyrythmie)</label></div>
+        <h3>1. Le timbre et l'espace</h3>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="1. Le timbre et l'espace" value="Les voix : enfants, hommes, femmes, diversité des émissions (lyriques, naturelles, traitées, beatbox...)"><label>Les voix : enfants, hommes, femmes, diversité des émissions...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="1. Le timbre et l'espace" value="Les instruments acoustiques et électroniques, leurs familles"><label>Les instruments acoustiques et électroniques, leurs familles</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="1. Le timbre et l'espace" value="Les formations instrumentales et vocales (duo, quartet, orchestre, a cappella...)"><label>Les formations instrumentales et vocales (duo, quartet, orchestre...)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="1. Le timbre et l'espace" value="Les timbres naturels, modifiés, électroacoustiques"><label>Les timbres naturels, modifiés, électroacoustiques</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="1. Le timbre et l'espace" value="La spatialisation du son (stéréo, surround, placement sur scène)"><label>La spatialisation du son (stéréo, surround, placement sur scène)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="1. Le timbre et l'espace" value="Effets de timbre : réverbération, écho, saturation, filtrage"><label>Effets de timbre : réverbération, écho, saturation, filtrage</label></div>
+
+        <h3>2. La dynamique</h3>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="2. La dynamique" value="Les nuances : piano, forte, mezzo-forte, pianissimo, fortissimo..." checked><label>Les nuances : piano, forte, mezzo-forte, pianissimo, fortissimo...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="2. La dynamique" value="Les variations progressives : crescendo, decrescendo"><label>Les variations progressives : crescendo, decrescendo</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="2. La dynamique" value="Les contrastes d'intensité : solo/tutti, accompagnement/mélodie" checked><label>Les contrastes d'intensité : solo/tutti, accompagnement/mélodie</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="2. La dynamique" value="La densité sonore (épaisseur, légèreté)"><label>La densité sonore (épaisseur, légèreté)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="2. La dynamique" value="La dynamique au service de l'expressivité et du phrasé"><label>La dynamique au service de l'expressivité et du phrasé</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="2. La dynamique" value="Lien entre densité des plans sonores et intensité perçue"><label>Lien entre densité des plans sonores et intensité perçue</label></div>
+
+        <h3>3. Le temps et le rythme</h3>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="La pulsation (régulière, irrégulière, absente)"><label>La pulsation (régulière, irrégulière, absente)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="Le tempo (lent, rapide, accelerando, rallentando)"><label>Le tempo (lent, rapide, accelerando, rallentando)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="Le rythme : valeurs longues et courtes, figures rythmiques"><label>Le rythme : valeurs longues et courtes, figures rythmiques</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="La mesure : binaire, ternaire"><label>La mesure : binaire, ternaire</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="La syncope, le contretemps, l'ostinato"><label>La syncope, le contretemps, l'ostinato</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="La polyrythmie"><label>La polyrythmie</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="3. Le temps et le rythme" value="La durée des sons (court, long, résonance)"><label>La durée des sons (court, long, résonance)</label></div>
+
+        <h3>4. Le successif et le simultané</h3>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="La mélodie (ligne mélodique, contour, mouvement conjoint/disjoint)"><label>La mélodie (ligne mélodique, contour, mouvement conjoint/disjoint)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="L'harmonie : accord, consonance, dissonance"><label>L'harmonie : accord, consonance, dissonance</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="La polyphonie : voix superposées indépendantes"><label>La polyphonie : voix superposées indépendantes</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="L'homophonie / homorythmie"><label>L'homophonie / homorythmie</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="Le contrechant, le bourdon"><label>Le contrechant, le bourdon</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="Le dialogue entre parties (question-réponse, écho)"><label>Le dialogue entre parties (question-réponse, écho)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="L'unisson"><label>L'unisson</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="4. Le successif et le simultané" value="La basse continue, l'accompagnement"><label>La basse continue, l'accompagnement</label></div>
+
+        <h3>5. La forme</h3>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="5. La forme" value="Les grandes structures formelles : ABA, rondo, thème et variations, forme sonate"><label>Les grandes structures formelles : ABA, rondo, thème et variations...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="5. La forme" value="Les sections : introduction, couplet, refrain, pont, coda"><label>Les sections : introduction, couplet, refrain, pont, coda</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="5. La forme" value="La répétition, la variation, le contraste"><label>La répétition, la variation, le contraste</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="5. La forme" value="La phrase musicale : antécédent, conséquent"><label>La phrase musicale : antécédent, conséquent</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="5. La forme" value="La progression harmonique comme élément structurant"><label>La progression harmonique comme élément structurant</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="5. La forme" value="Les formes liées au texte : air, récitatif, lied, chanson, rap..."><label>Les formes liées au texte : air, récitatif, lied, chanson, rap...</label></div>
+
+        <h3>6. Les styles</h3>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Les grandes périodes : Baroque, Classique, Romantique, Contemporain..."><label>Les grandes périodes : Baroque, Classique, Romantique...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Les grandes esthétiques : jazz, blues, rock, pop, musiques du monde, électronique, musique savante..."><label>Les grandes esthétiques : jazz, blues, rock, pop, électronique...</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Les marqueurs stylistiques propres à chaque esthétique"><label>Les marqueurs stylistiques propres à chaque esthétique</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Les influences et métissages entre styles"><label>Les influences et métissages entre styles</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Le contexte historique, géographique et culturel des œuvres"><label>Le contexte historique, géographique et culturel des œuvres</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Les liens entre musique et autres arts (cinéma, danse, arts plastiques...)"><label>Les liens entre musique et autres arts (cinéma, danse...)</label></div>
+        <div class="checkbox-item"><input type="checkbox" name="domaine" data-parent="6. Les styles" value="Le monde professionnel de la musique et du spectacle vivant"><label>Le monde professionnel de la musique et du spectacle vivant</label></div>
     </div>
 
-    <!-- 5. VOCABULAIRE -->
-    <h2>5. Vocabulaire</h2>
+    <!-- 5. VOCABULAIRE ET CORPUS -->
+    <h2>5. Vocabulaire & Corpus</h2>
     <div class="form-group">
-        <label>Mots-clés de la séquence (séparés par des virgules) :</label>
-        <input type="text" id="vocabulaire" placeholder="Ex: tessiture, crescendo, a cappella...">
+        <label>Mots-clés (séparés par des virgules) :</label>
+        <input type="text" id="vocabulaire" value="tessiture, au moins, justesse, GOSPEL, NUANCE, a cappella">
     </div>
-
-    <!-- 6. CORPUS & ŒUVRES -->
-    <h2>6. Corpus & Œuvres</h2>
     <div class="form-group">
         <label>Œuvre de référence :</label>
-        <input type="text" id="oeuvreRef" placeholder="Titre de l'œuvre principale et nom du compositeur/artiste">
+        <input type="text" id="oeuvreRef" value="I WILL ALWAYS LOVE YOU DE WHITNEY HOUSTON">
     </div>
     <div class="form-group">
-        <label>Œuvres complémentaires (Une par ligne) :</label>
-        <textarea id="oeuvreComp" placeholder="• Exemple œuvre complémentaire 1&#10;• Exemple œuvre complémentaire 2"></textarea>
+        <label>Œuvres complémentaires :</label>
+        <textarea id="oeuvreComp">• ALL BY MYSELF DE CELINE DION
+• YOU MAKE ME FEEL LIKE A NATURAL WOMAN DE ARETHA FRANKLIN
+• WHEN I WAS YOUR MAN DE BRUNO MARS</textarea>
     </div>
 
-    <!-- 7. PROJET MUSICAL & HISTOIRE DES ARTS -->
-    <h2>7. Pratiques & Contextes (Descriptifs Libres)</h2>
+    <!-- 6. PRATIQUES & CONTEXTES -->
+    <h2>6. Pratiques & Contextes</h2>
     <div class="form-group">
         <label>Projet Musical :</label>
-        <textarea id="projetMusical" placeholder="Décrire ici les activités pratiques de chant, rôles des élèves, objectifs de production collective..."></textarea>
+        <textarea id="projetMusical">STAND UP DE CYNTHIA ERIVO.
+Chaque élève passe à tour de rôle pour interpréter une phrase du couplet, travaillant ainsi sa propre tessiture et son intonation...</textarea>
     </div>
     <div class="form-group">
-        <label>Histoire des Arts (Contextualisation) :</label>
-        <textarea id="hda" placeholder="Décrire ici les ancrages historiques, thématiques interdisciplinaires, liens sociopolitiques de l'œuvre..."></textarea>
+        <label>Histoire des Arts :</label>
+        <textarea id="hda">"L'Art, entre mémoire et engagement"
+Lien Historique : Étude de la figure d'Harriet Tubman et de la lutte contre l'esclavage aux États-Unis au XIXe siècle...</textarea>
     </div>
 
-    <button class="btn-generer" onclick="genererFicheUniverselle()">Générer la séquence</button>
+    <button class="btn-generer" onclick="genererFicheSang()">Générer le document de Séquence</button>
 </div>
 
-<!-- SECTION DE RENDU FINAL (CONFORME AUX IMAGES) -->
+<!-- LE RENDU FINAL BRUT (STYLE JULIEN SANG) -->
 <div id="aperçu">
     <div class="rendu-document">
-        <p style="font-weight: bold; font-size: 14px; margin-bottom: 25px; letter-spacing: 0.5px; text-transform: uppercase;">SÉQUENCE PÉDAGOGIQUE MUSICALE</p>
+        <p style="font-weight: bold; font-size: 14px; margin-bottom: 25px; letter-spacing: 0.5px;">SÉQUENCE PÉDAGOGIQUE MUSICALE</p>
         
         <div id="contenuRendu"></div>
         
         <div class="footer-doc">
             <p>Document généré le <span id="dateGen"></span></p>
-            <p>Fiche de préparation - Éducation Musicale et Chant Choral</p>
+            <p>Créé via l'outil de Séquence Éduscol</p>
         </div>
         <br>
         <button class="btn-imprimer no-print" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
@@ -234,16 +266,6 @@
 </div>
 
 <script>
-function changerCycle() {
-    const select = document.getElementById('niveau');
-    const cycle = select.options[select.selectedIndex].getAttribute('data-cycle');
-    
-    document.getElementById('bloc-cycle3-att').style.display = (cycle === "3") ? "block" : "none";
-    document.getElementById('bloc-cycle4-att').style.display = (cycle === "4") ? "block" : "none";
-    document.getElementById('bloc-cycle3-comp').style.display = (cycle === "3") ? "block" : "none";
-    document.getElementById('bloc-cycle4-comp').style.display = (cycle === "4") ? "block" : "none";
-}
-
 function degresserBlocsAvecParents(nomChamp) {
     const inputs = document.querySelectorAll(`input[name="${nomChamp}"]:checked`);
     let structure = {};
@@ -266,41 +288,38 @@ function degresserBlocsAvecParents(nomChamp) {
     return html;
 }
 
-function genererFicheUniverselle() {
+function genererFicheSang() {
     const niveau = document.getElementById('niveau').value;
-    const select = document.getElementById('niveau');
-    const cycle = select.options[select.selectedIndex].getAttribute('data-cycle');
-    const numSeq = document.getElementById('numSeq').value || "Non spécifié";
-    const duree = document.getElementById('duree').value || "Non spécifiée";
-    const titre = document.getElementById('titre').value || "Sans titre";
-    const problematique = document.getElementById('problematique').value || "Aucune problématique saisie.";
-    const vocabulaire = document.getElementById('vocabulaire').value || "Aucun mot-clé renseigné.";
-    const oeuvreRef = document.getElementById('oeuvreRef').value || "Aucune œuvre de référence saisie.";
+    const numSeq = document.getElementById('numSeq').value;
+    const duree = document.getElementById('duree').value;
+    const titre = document.getElementById('titre').value;
+    const problematique = document.getElementById('problematique').value;
+    const vocabulaire = document.getElementById('vocabulaire').value;
+    const oeuvreRef = document.getElementById('oeuvreRef').value;
     const oeuvreComp = document.getElementById('oeuvreComp').value;
     const projetMusical = document.getElementById('projetMusical').value;
     const hda = document.getElementById('hda').value;
 
-    let compFormaté = oeuvreComp ? oeuvreComp.split('\n').map(line => line.trim() ? `<p>${line}</p>` : '').join('') : '<p>Aucune</p>';
-    let projetFormaté = projetMusical ? projetMusical.split('\n').map(l => l.trim() ? `<p>${l}</p>` : '').join('') : '<p>Aucun descriptif saisi.</p>';
-    let hdaFormaté = hda ? hda.split('\n').map(l => l.trim() ? `<p>${l}</p>` : '').join('') : '<p>Aucun descriptif saisi.</p>';
+    let compFormaté = oeuvreComp ? oeuvreComp.split('\n').map(line => `<p>${line}</p>`).join('') : '';
+    let projetFormaté = projetMusical ? projetMusical.split('\n').map(l => `<p>${l}</p>`).join('') : '';
+    let hdaFormaté = hda ? hda.split('\n').map(l => `<p>${l}</p>`).join('') : '';
 
     let html = `
         <h2>INFORMATIONS GÉNÉRALES</h2>
-        <p>Niveau : ${niveau}</p>
-        <p>Cycle : Cycle ${cycle}</p>
+        <p>Niveau : ${niveau} (Cycle 4)</p>
         <p>Séquence n° : ${numSeq}</p>
         <p>Durée : ${duree} séances</p>
         <p>Titre : ${titre}</p>
         <p>Problématique : ${problematique}</p>
 
-        <h2>OBJECTIFS ET ATTENDUS DE FIN DE CYCLE</h2>
-        ${degresserBlocsAvecParents('attendu') || '<p class="item-choix">Aucun objectif sélectionné.</p>'}
+        <h2>ATTENDUS DE FIN DE CYCLE 4</h2>
+        ${degresserBlocsAvecParents('attendu')}
 
         <h2>COMPÉTENCES TRAVAILLÉES</h2>
-        ${degresserBlocsAvecParents('compDet') || '<p class="item-choix">Aucune compétence sélectionnée.</p>'}
+        ${degresserBlocsAvecParents('compDet')}
 
         <h2>DOMAINES TECHNIQUES</h2>
-        ${degresserBlocsAvecParents('domaine') || '<p class="item-choix">Aucun domaine technique sélectionné.</p>'}
+        ${degresserBlocsAvecParents('domaine')}
 
         <h2>VOCABULAIRE</h2>
         <p>${vocabulaire}</p>
@@ -321,10 +340,8 @@ function genererFicheUniverselle() {
     const aujourdhui = new Date();
     document.getElementById('dateGen').innerText = aujourdhui.toLocaleDateString('fr-FR');
     document.getElementById('contenuRendu').innerHTML = html;
-    
-    const aperçu = document.getElementById('aperçu');
-    aperçu.style.display = 'block';
-    aperçu.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('aperçu').style.display = 'block';
+    document.getElementById('aperçu').scrollIntoView({ behavior: 'smooth' });
 }
 </script>
 
