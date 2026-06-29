@@ -258,4 +258,43 @@ cat > /home/home/claude/index.html << 'ENDOFFILE'
     }
 
     function sauvegarderSequence() {
-        let
+        let nom = document.getElementById('nomSauvegarde').value.trim();
+        if(!nom) { nom = "Séquence_" + (document.getElementById('titre').value || new Date().toLocaleDateString()); }
+        
+        let data = {
+            inputs: {},
+            checkboxes: []
+        };
+        
+        inputsForm.forEach(id => data.inputs[id] = document.getElementById(id).value);
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+            data.checkboxes.push({name: cb.name, value: cb.value});
+        });
+        
+        localStorage.setItem('seq_em_' + nom, JSON.stringify(data));
+        document.getElementById('saveStatus').innerText = "💾 Sauvegardé avec succès !";
+        chargerListeSauvegardes();
+    }
+
+    function chargerListeSauvegardes() {
+        const liste = document.getElementById('listeSauvegardes');
+        liste.innerHTML = '';
+        let total = 0;
+        
+        for(let i=0; i<localStorage.length; i++) {
+            let key = localStorage.key(i);
+            if(key.startsWith('seq_em_')) {
+                total++;
+                let nomAffichage = key.replace('seq_em_', '');
+                let item = document.createElement('div');
+                item.className = 'saved-item';
+                item.innerHTML = `
+                    <span class="saved-item-name">${nomAffichage}</span>
+                    <button class="saved-item-btn btn-load" onclick="chargerSequence('${key}')">Ouvrir</button>
+                    <button class="saved-item-btn btn-del" onclick="supprimerSauvegarde('${key}')">Supprimer</button>
+                `;
+                liste.appendChild(item);
+            }
+        }
+        if(total === 0) { liste.innerHTML = '<span class="empty-saves">Aucun document sauvegardé dans ce navigateur.</span>'; }
+    }
