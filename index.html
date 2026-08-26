@@ -39,7 +39,6 @@
         .btn-outline { background-color: #fff; color: var(--slate-700); border: 1px solid var(--border); }
         .btn-outline:hover { background-color: #f1f5f9; }
         .save-status { font-size: 12px; color: #059669; font-style: italic; margin-left: auto; }
-
         .save-panel { background: #fffbeb; border: 1px solid #fcd34d; border-radius: var(--radius); padding: 14px 18px; margin-bottom: 20px; }
         .save-panel-title { font-weight: 700; font-size: 12px; color: #92400e; text-transform: uppercase; margin-bottom: 10px; }
         .save-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
@@ -48,40 +47,34 @@
         .saved-item { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: #fff; border: 1px solid #fde68a; border-radius: 6px; margin-bottom: 4px; }
         .saved-item-name { flex: 1; font-size: 12.5px; color: var(--slate-700); font-weight: 500; }
         .saved-item-btn { padding: 4px 10px; font-size: 11px; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
-
         h2 { color: var(--primary); margin-top: 35px; border-bottom: 2px solid var(--slate-200); padding-bottom: 6px; font-size: 15px; text-transform: uppercase; }
         h3 { color: var(--slate-800); font-size: 12px; margin-top: 16px; margin-bottom: 8px; text-transform: uppercase; background: #e2e8f0; padding: 6px 10px; border-radius: 4px; }
         h4 { color: #1e40af; font-size: 12px; margin: 12px 0 6px 0; text-transform: none; font-weight: 700; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; }
         .form-group { margin-bottom: 18px; }
         label { font-weight: 600; display: block; margin-bottom: 6px; font-size: 12.5px; color: var(--slate-800); }
-        .hint { font-weight: 400; color: var(--slate-600); font-size: 11.5px; margin-top: -3px; margin-bottom: 8px; }
         select, input[type="text"], input[type="number"], input[type="date"], textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; font-size: 13px; background-color: #fff; color: var(--slate-700); font-family: inherit; }
         select:focus, input:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
         textarea { height: 80px; resize: vertical; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
         @media (max-width: 600px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
-
         .checkbox-group { background: #fafafa; padding: 18px; border-radius: var(--radius); border: 1px solid var(--slate-200); margin-bottom: 20px; max-height: 480px; overflow-y: auto; }
         .checkbox-item { margin-bottom: 8px; display: flex; align-items: flex-start; font-size: 12.5px; }
         .checkbox-item input { margin-right: 10px; margin-top: 3px; transform: scale(1.05); cursor: pointer; flex-shrink: 0; }
         .checkbox-item label { font-weight: normal; margin: 0; cursor: pointer; color: var(--slate-700); line-height: 1.4; }
-
         .sub-options { margin-left: 22px; padding-left: 10px; border-left: 2px solid #cbd5e1; margin-top: 4px; margin-bottom: 12px; }
-
         .bloc-cycle3, .bloc-cycle4 { display: none; }
         .badge-c3 { display: block; background: #eff6ff; color: #1e40af; border-left: 4px solid #2563eb; padding: 8px 12px; font-weight: bold; font-size: 12px; margin-bottom: 12px; }
         .badge-c4 { display: block; background: #fef2f2; color: #991b1b; border-left: 4px solid #dc2626; padding: 8px 12px; font-weight: bold; font-size: 12px; margin-bottom: 12px; }
-
         .seances-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
         .seances-table th { background: #e2e8f0; font-size: 11px; text-transform: uppercase; padding: 8px; text-align: left; color: var(--slate-800); }
         .seances-table td { padding: 6px; border-bottom: 1px solid var(--slate-200); vertical-align: top; }
         .seances-table input, .seances-table textarea { font-size: 12px; padding: 6px 8px; height: auto; }
-        .seances-table textarea { height: 45px; }
+        .seances-table textarea { height: 50px; }
         .seances-table .col-num { width: 40px; text-align: center; font-weight: 700; color: var(--slate-600); }
         .seances-table .col-del { width: 35px; text-align: center; }
         .btn-del-row { background: transparent; border: none; color: #ef4444; cursor: pointer; font-size: 15px; padding: 2px; }
-
+        
         /* IMPRESSION & RENDU */
         #apercu { margin-top: 50px; padding-top: 40px; border-top: 3px dashed var(--border); display: none; }
         .rendu-document { font-family: 'Calibri', Arial, sans-serif; line-height: 1.5; max-width: 850px; margin: 0 auto; padding: 20px; color: #1a1a1a; background: #fff; font-size: 12.5px; }
@@ -95,7 +88,6 @@
         .rendu-document table.tbl-seances { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 11px; }
         .rendu-document table.tbl-seances th { background: #1a1a1a; color: #fff; padding: 5px 7px; text-transform: uppercase; }
         .rendu-document table.tbl-seances td { border: 1px solid #ccc; padding: 5px 7px; vertical-align: top; }
-
         @media print {
             .no-print { display: none !important; }
             body { background: white; margin: 0; padding: 0; }
@@ -108,9 +100,8 @@
 <div class="container">
     <div class="app-header no-print">
         <h1>Générateur de Séquence Pédagogique</h1>
-        <p class="subtitle">Éducation Musicale — Cycles 3 et 4 (6e, 5e, 4e, 3e) — Référentiel Éduscol Complet</p>
+        <p class="subtitle">Éducation Musicale — Cycles 3 et 4 (6e, 5e, 4e, 3e) — Référentiel Éduscol Officiel</p>
     </div>
-
     <div class="toolbar no-print">
         <button class="btn btn-danger" onclick="nouvelleSequence()">🗑️ Réinitialiser</button>
         <button class="btn btn-dark" onclick="genererFiche()">👁️ Prévisualiser</button>
@@ -118,22 +109,20 @@
         <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer / PDF</button>
         <div class="save-status" id="saveStatus">🟢 Prêt</div>
     </div>
-
     <div class="save-panel no-print">
         <div class="save-panel-title">💾 Mes séquences enregistrées</div>
         <div class="save-row">
-            <input type="text" id="nomSauvegarde" placeholder="Nom du fichier (ex: Seq3 - Voix et Instruments 3ème)..." />
+            <input type="text" id="nomSauvegarde" placeholder="Nom du fichier (ex: Seq1 6e - Mon corps est un instrument)..." />
             <button class="btn btn-orange" onclick="sauvegarderSequence()">💾 Enregistrer</button>
         </div>
         <div class="saved-list" id="listeSauvegardes"></div>
     </div>
-
     <div class="no-print">
         <h2>0. En-tête institutionnel</h2>
         <div class="grid-3">
             <div class="form-group">
                 <label>Établissement :</label>
-                <input type="text" id="etablissement" placeholder="Ex : Collège Bouéni M'Titi" oninput="autoNotif()">
+                <input type="text" id="etablissement" placeholder="Ex : Collège de Kani-Kéli" oninput="autoNotif()">
             </div>
             <div class="form-group">
                 <label>Académie :</label>
@@ -151,28 +140,27 @@
             </div>
             <div class="form-group">
                 <label>Classe(s) :</label>
-                <input type="text" id="classe" placeholder="Ex : 3e2, 3e4" oninput="autoNotif()">
+                <input type="text" id="classe" placeholder="Ex : 6e1, 6e3" oninput="autoNotif()">
             </div>
             <div class="form-group">
                 <label>Date de rédaction :</label>
                 <input type="date" id="dateRedaction" oninput="autoNotif()">
             </div>
         </div>
-
         <h2>1. Informations Générales</h2>
         <div class="grid-2">
             <div class="form-group">
                 <label>Niveau :</label>
                 <select id="niveau" onchange="filtrerTout(); autoNotif();">
-                    <option value="6ème">6ème (Cycle 3)</option>
+                    <option value="6ème" selected>6ème (Cycle 3)</option>
                     <option value="5ème">5ème (Cycle 4)</option>
                     <option value="4ème">4ème (Cycle 4)</option>
-                    <option value="3ème" selected>3ème (Cycle 4)</option>
+                    <option value="3ème">3ème (Cycle 4)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Séquence n° :</label>
-                <input type="text" id="numSeq" placeholder="Ex : Séquence 3" oninput="autoNotif()">
+                <input type="text" id="numSeq" placeholder="Ex : Séquence 1" oninput="autoNotif()">
             </div>
         </div>
         <div class="grid-2">
@@ -182,98 +170,108 @@
             </div>
             <div class="form-group">
                 <label>Titre de la séquence :</label>
-                <input type="text" id="titre" placeholder="Ex : Musique et Instruments" oninput="autoNotif()">
+                <input type="text" id="titre" placeholder="Ex : Mon corps est un instrument" oninput="autoNotif()">
             </div>
         </div>
         <div class="form-group">
             <label>Problématique :</label>
-            <textarea id="problematique" placeholder="Ex : Comment un instrument de musique imite-t-il la voix humaine pour exprimer des émotions ?" oninput="autoNotif()"></textarea>
+            <textarea id="problematique" placeholder="Ex : Comment faire de la musique ensemble sans aucun instrument ?" oninput="autoNotif()"></textarea>
         </div>
-
         <h2>2. Objectifs et Attendus de fin de cycle (Référentiel Éduscol)</h2>
         <div class="checkbox-group">
-
-            <!-- CYCLE 3 -->
-            <div class="bloc-cycle3" data-section="attendus">
-                <div class="badge-c3">ATTENDUS DE FIN DE CYCLE 3 (6ème)</div>
+            <!-- CYCLE 3 (6ème) -->
+            <div class="bloc-cycle3">
+                <div class="badge-c3">ATTENDUS OFFICIELS DE FIN DE CYCLE 3 (6ème)</div>
                 
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Chanter et interpréter" value="1. Identifier, choisir et mobiliser les techniques vocales et corporelles au service du sens et de l'expression" onchange="autoNotif()"><label><strong>1. Mobiliser les techniques vocales et corporelles au service de l'expression</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="1. Mobiliser les techniques vocales et corporelles au service de l'expression" onchange="autoNotif()"><label><strong>1. Mobiliser les techniques vocales et corporelles au service de l'expression</strong></label></div>
                 <div class="sub-options">
                     <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Imiter un modèle vocal ou rythmique avec précision" onchange="autoNotif()"><label>• Imiter un modèle vocal ou rythmique avec précision</label></div>
                     <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Chanter avec une intonation juste et une posture adaptée" onchange="autoNotif()"><label>• Chanter avec une intonation juste et une posture adaptée</label></div>
                 </div>
-
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écouter, comparer et commenter" value="2. Mettre en lien des caractéristiques musicales d'œuvres différentes" onchange="autoNotif()"><label><strong>2. Mettre en lien des caractéristiques musicales d'œuvres différentes</strong></label></div>
+                
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="2. Mettre en lien des caractéristiques musicales d'œuvres différentes" onchange="autoNotif()"><label><strong>2. Mettre en lien des caractéristiques musicales d'œuvres différentes</strong></label></div>
                 <div class="sub-options">
                     <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Repérer les timbres instrumentaux et vocaux" onchange="autoNotif()"><label>• Repérer les timbres instrumentaux et vocaux</label></div>
                     <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Identifier une forme simple (couplet/refrain, ABA)" onchange="autoNotif()"><label>• Identifier une forme simple (couplet/refrain, ABA)</label></div>
                 </div>
 
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Explorer, imaginer et créer" value="3. Explorer les sons, imaginer des utilisations musicales et créer des organisations sonores" onchange="autoNotif()"><label><strong>3. Explorer les sons et créer des organisations temporelles simples</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="3. Explorer les sons, imaginer des utilisations musicales et créer des organisations sonores" onchange="autoNotif()"><label><strong>3. Explorer les sons et créer des organisations temporelles simples</strong></label></div>
                 
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Échanger et partager" value="4. Développer sa sensibilité, son esprit critique et s'enrichir de la diversité des goûts" onchange="autoNotif()"><label><strong>4. Développer sa sensibilité et s'enrichir de la diversité des esthétiques</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="4. Développer sa sensibilité, son esprit critique et s'enrichir de la diversité des goûts" onchange="autoNotif()"><label><strong>4. Développer sa sensibilité et s'enrichir de la diversité des эстеtiques</strong></label></div>
             </div>
 
-            <!-- CYCLE 4 -->
-            <div class="bloc-cycle4" data-section="attendus">
+            <!-- CYCLE 4 (5ème, 4ème, 3ème) -->
+            <div class="bloc-cycle4">
                 <div class="badge-c4">ATTENDUS OFFICIELS DE FIN DE CYCLE 4 (5ème, 4ème, 3ème)</div>
-
-                <!-- Objectif 1 -->
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Projets d'interprétation/création" value="Obj 1 : Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" onchange="autoNotif()"><label><strong>1. Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="1. Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création" onchange="autoNotif()"><label><strong>1. Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création</strong></label></div>
                 <div class="sub-options">
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Apprendre à imiter un modèle puis à l'interpréter" onchange="autoNotif()"><label>• Imiter un modèle puis l'interpréter avec précision</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Imiter un modèle puis l'interpréter avec précision" onchange="autoNotif()"><label>• Imiter un modèle puis l'interpréter avec précision</label></div>
                     <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Moduler sa dynamique (intensité du son, intensité du geste)" onchange="autoNotif()"><label>• Moduler sa dynamique (intensité du son, intensité du geste)</label></div>
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Moduler son timbre (sons voisés/non voisés, voyelles dans le groupe, richesse harmonique)" onchange="autoNotif()"><label>• Moduler son timbre (sons voisés/non voisés, homogénéité vocale, richesse harmonique)</label></div>
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Tenir une ligne de chant polyphonique / rythmes croisés" onchange="autoNotif()"><label>• Tenir sa partie vocale ou rythmique dans un contexte polyphonique ou de polyrythmie</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Moduler son timbre (sons voisés/non voisés, homogénéité vocale)" onchange="autoNotif()"><label>• Moduler son timbre (sons voisés/non voisés, homogénéité vocale)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Tenir sa partie vocale ou rythmique dans un contexte polyphonique" onchange="autoNotif()"><label>• Tenir sa partie vocale ou rythmique dans un contexte polyphonique</label></div>
                 </div>
 
-                <!-- Objectif 2 -->
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Écoute et culture" value="Obj 2 : Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" onchange="autoNotif()"><label><strong>2. Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="2. Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références" onchange="autoNotif()"><label><strong>2. Identifier, décrire, commenter une organisation musicale complexe</strong></label></div>
                 <div class="sub-options">
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Décrire, identifier et caractériser les éléments constitutifs du phénomène sonore" onchange="autoNotif()"><label>• Décrire, identifier et caractériser les éléments constitutifs du phénomène sonore (timbre, texture, forme...)</label></div>
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Analyser les modes de jeu instrumentaux et les techniques d'imitation vocale" onchange="autoNotif()"><label>• Analyser les modes de jeu instrumentaux et le traitement du timbre / de l'espace</label></div>
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Situer des musiques de styles proches ou éloignés dans le temps et l'espace" onchange="autoNotif()"><label>• Situer et comparer des œuvres de styles, époques ou continents différents</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Décrire, identifier et caractériser les éléments constitutifs du phénomène sonore" onchange="autoNotif()"><label>• Caractériser les éléments du phénomène sonore (timbre, texture, forme...)</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Situer et comparer des œuvres de styles, époques ou continents différents" onchange="autoNotif()"><label>• Situer et comparer des œuvres de styles ou époques différents</label></div>
                 </div>
 
-                <!-- Objectif 3 -->
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Création et production" value="Obj 3 : Concevoir, créer et réaliser des pièces musicales en référence à des styles, œuvres ou contraintes" onchange="autoNotif()"><label><strong>3. Concevoir, créer et réaliser des pièces musicales en référence à des styles, des œuvres ou des contraintes</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="3. Concevoir, créer et réaliser des pièces musicales en référence à des styles, œuvres ou contraintes" onchange="autoNotif()"><label><strong>3. Concevoir, créer et réaliser des pièces musicales</strong></label></div>
                 <div class="sub-options">
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Inventer des arrangements ou pastiches à partir de motifs retenus" onchange="autoNotif()"><label>• Réutiliser des caractéristiques d'une œuvre pour une courte création ou un arrangement</label></div>
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Utiliser des outils numériques pour enregistrer, fixer ou transformer le son" onchange="autoNotif()"><label>• Exploiter des outils numériques et enregistrements pour enrichir le projet créatif</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Réutiliser des caractéristiques d'une œuvre pour une création" onchange="autoNotif()"><label>• Réutiliser des caractéristiques d'une œuvre pour une création</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Exploiter des outils numériques pour enrichir le projet" onchange="autoNotif()"><label>• Exploiter des outils numériques (MAO, enregistrement)</label></div>
                 </div>
 
-                <!-- Objectif 4 -->
-                <div class="checkbox-item"><input type="checkbox" name="attendu" data-parent="Argumentation et débat" value="Obj 4 : Présenter et justifier des choix d'interprétation et de création, justifier un avis et défendre un point de vue" onchange="autoNotif()"><label><strong>4. Présenter et justifier des choix d'interprétation et de création, justifier un avis et défendre un point de vue</strong></label></div>
+                <div class="checkbox-item"><input type="checkbox" name="attendu" value="4. Présenter et justifier des choix d'interprétation et de création, justifier un avis" onchange="autoNotif()"><label><strong>4. Présenter et justifier des choix d'interprétation, débattre</strong></label></div>
                 <div class="sub-options">
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Respecter l'expression de la sensibilité de chacun lors des prestations et débats" onchange="autoNotif()"><label>• Respecter la sensibilité d'autrui et la diversité des goûts lors des restitutions</label></div>
-                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Argumenter une critique constructive sur une production individuelle ou collective" onchange="autoNotif()"><label>• Exprimer et argumenter un avis critique sur une œuvre ou une interprétation de classe</label></div>
+                    <div class="checkbox-item"><input type="checkbox" name="attendu_sub" value="Exprimer et argumenter un avis critique sur une production" onchange="autoNotif()"><label>• Exprimer et argumenter un avis critique structuré</label></div>
                 </div>
             </div>
         </div>
 
         <h2>3. Compétences Travaillées et Domaines Techniques</h2>
         <div class="checkbox-group">
-            <div class="bloc-cycle4" data-section="competences">
-                <div class="badge-c4">COMPÉTENCES SPÉCIFIQUES &amp; DOMAINES TECHNIQUES (CYCLE 4)</div>
+            <!-- DOMAINES & COMPÉTENCES CYCLE 3 -->
+            <div class="bloc-cycle3">
+                <div class="badge-c3">COMPÉTENCES SPÉCIFIQUES & DOMAINES TECHNIQUES (CYCLE 3)</div>
+                <h4>Domaine 1 : Le timbre et l'espace</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier les timbres vocaux et instrumentaux" onchange="autoNotif()"><label>• Identifier les timbres vocaux, les ensembles et les familles d'instruments</label></div>
+                
+                <h4>Domaine 2 : Le temps et le rythme</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Repérer la pulsation, le tempo et des formules rythmiques simples" onchange="autoNotif()"><label>• Repérer la pulsation, le tempo et reproduire des formules rythmiques simples</label></div>
+                
+                <h4>Domaine 3 : La dynamique et la nuance</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Distinguer les variations d'intensité (nuances) et de vitesse" onchange="autoNotif()"><label>• Distinguer les variations d'intensité (forte/piano) et les nuances</label></div>
 
-                <h4>Domaine 1 : Réaliser des projets musicaux d'interprétation ou de création</h4>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Techniques vocales et gestuelles : phrasé, timbre, rythme, hauteur, forme" onchange="autoNotif()"><label>• Vocabulaire et techniques de l'interprétation musicale (phrasé, timbre, rythme, hauteur, forme)</label></div>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Geste vocal : Imiter et mémoriser un modèle rythmique/mélodique" onchange="autoNotif()"><label>• Geste vocal : Imiter et mémoriser un modèle rythmique / mélodique</label></div>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Geste vocal : Moduler sa dynamique et la richesse harmonique du timbre" onchange="autoNotif()"><label>• Geste vocal : Moduler sa dynamique et travailler la qualité timbrale du groupe</label></div>
-
-                <h4>Domaine 2 : Écouter, comparer, construire une culture musicale commune</h4>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Lexiques du langage musical et organologie" onchange="autoNotif()"><label>• Maîtrise des lexiques du langage musical, de l'organologie et de l'acoustique</label></div>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Style : Musiques de différents continents et musiques traditionnelles" onchange="autoNotif()"><label>• Analyse des styles : Musiques de différents continents et musiques traditionnelles / métissages</label></div>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Timbre et espace : Qualité de la texture, modes de jeu instrumentaux" onchange="autoNotif()"><label>• Timbre et espace : Caractérisation de la texture sonore et des modes de jeu instrumentaux</label></div>
-
-                <h4>Domaine 3 : Échanger, partager, argumenter et débattre</h4>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Perception et respect de la sensibilité artistique dans l'échange" onchange="autoNotif()"><label>• Respecter la sensibilité de chacun et défendre des choix artistiques argumentés</label></div>
+                <h4>Domaine 4 : La forme et la structure</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Repérer l'organisation d'une œuvre simple (couplet/refrain, répétition, écho)" onchange="autoNotif()"><label>• Repérer l'organisation d'une œuvre simple (couplet/refrain, écho, ostinato)</label></div>
             </div>
 
-            <div class="bloc-cycle3" data-section="competences">
-                <div class="badge-c3">COMPÉTENCES SPÉCIFIQUES (CYCLE 3)</div>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Chanter à l'unisson ou à deux voix avec juste intonation" onchange="autoNotif()"><label>• Chanter à l'unisson ou à deux voix avec une intonation adéquate</label></div>
-                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier la structure et situer le contexte géographique/historique" onchange="autoNotif()"><label>• Repérer la structure et situer le contexte culturel d'une œuvre</label></div>
+            <!-- DOMAINES & COMPÉTENCES CYCLE 4 -->
+            <div class="bloc-cycle4">
+                <div class="badge-c4">7 DOMAINES D'APPRENTISSAGE OFFICIELS (CYCLE 4)</div>
+                
+                <h4>Domaine 1 : Le timbre et le son</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Timbre/Son : Modes de jeu, textures, caractérisation du son" onchange="autoNotif()"><label>• Identifier et analyser les modes de jeu instrumentaux et les textures sonores</label></div>
+
+                <h4>Domaine 2 : Le temps et le rythme</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Temps/Rythme : Polyrythmies, polymétries, métrique, tempi" onchange="autoNotif()"><label>• Analyser la métrique, la polyrythmie et la maîtrise des tempi</label></div>
+
+                <h4>Domaine 3 : L'espace et la dynamique</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Espace/Dynamique : Plan sonore, spatialisation, nuances" onchange="autoNotif()"><label>• Distinguer la mise en espace du son, les plans sonores et les nuances</label></div>
+
+                <h4>Domaine 4 : L'architecture et la forme</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Forme : Structure complexe, développement, contraste, tuilage" onchange="autoNotif()"><label>• Identifier les structures complexes (forme rondo, thèmes, tuilage, variations)</label></div>
+
+                <h4>Domaine 5 : L'invariable et le variable</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Variation : Citation, emprunt, arrangement, métissage musical" onchange="autoNotif()"><label>• Analyser les processus de variation, d'emprunt, de reprise et de métissage</label></div>
+
+                <h4>Domaine 6 : Le texte et la musique</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Texte/Musique : Rapport texte/musique, prosodie, illustration sonore" onchange="autoNotif()"><label>• Analyser la prosodie, l'illustration du texte par la musique et le sens</label></div>
+
+                <h4>Domaine 7 : Le successif et le simultané</h4>
+                <div class="checkbox-item"><input type="checkbox" name="compDet" value="Successif/Simultané : Monodie, polyphonie, accompagnement, contrepoint" onchange="autoNotif()"><label>• Différencier monodie, polyphonie, mélodie accompagnée et contrepoint</label></div>
             </div>
         </div>
 
@@ -281,29 +279,26 @@
         <div class="grid-2">
             <div class="form-group">
                 <label>Œuvre de référence :</label>
-                <input type="text" id="oeuvreRef" placeholder="Ex : Seven Nation Army - The White Stripes" oninput="autoNotif()">
+                <input type="text" id="oeuvreRef" placeholder="Ex : Barbatuques - Baianá" oninput="autoNotif()">
             </div>
             <div class="form-group">
                 <label>Œuvres complémentaires / comparatives :</label>
-
-                <input type="text" id="oeuvresComp" placeholder="Ex : Zily - Tsika ; Rossy - Ikala Soa" oninput="autoNotif()">
+                <input type="text" id="oeuvresComp" placeholder="Ex : Stomp Out Loud ; Jaojoby - Malagasy" oninput="autoNotif()">
             </div>
         </div>
-
         <div class="grid-2">
             <div class="form-group">
                 <label>Projet Musical (Chant / Rythme) :</label>
-                <textarea id="projetMusical" placeholder="Ex : Polyphonie et rythmes croisés — Réussir à tenir une ligne de chant pendant un rythme complexe..." oninput="autoNotif()"></textarea>
+                <textarea id="projetMusical" placeholder="Ex : Si Ma Ma Ka — Chant d'accueil africain avec accompagnement en percussions corporelles..." oninput="autoNotif()"></textarea>
             </div>
             <div class="form-group">
-                <label>Histoire des Arts &amp; Cross-Curricular (Métissage, Culture) :</label>
-                <textarea id="histoireDesArts" placeholder="Ex : L'axe du Métissage sonore — Étude de la réappropriation des instruments européens (accordéon, guitare) dans l'Océan Indien..." oninput="autoNotif()"></textarea>
+                <label>Histoire des Arts & Cross-Curricular :</label>
+                <textarea id="histoireDesArts" placeholder="Ex : La danse Gumboot (Afrique du Sud) — Communication non-verbale et corps comme percussion..." oninput="autoNotif()"></textarea>
             </div>
         </div>
-
         <div class="form-group">
             <label>Vocabulaire et Notions clés :</label>
-            <input type="text" id="vocabulaire" placeholder="Ex : Organologie, Acoustique, Interprétation, Métissage musical, Timbre, Polyrythmie" oninput="autoNotif()">
+            <input type="text" id="vocabulaire" placeholder="Ex : Pulsation, Tempo, Rythme, Percussions corporelles, Unisson, Ostinato, Gumboot" oninput="autoNotif()">
         </div>
 
         <h2>5. Déroulé des séances</h2>
@@ -319,22 +314,22 @@
             </thead>
             <tbody id="corpsTableSeances"></tbody>
         </table>
-        <button class="btn btn-outline btn-add-row no-print" onclick="ajouterLigneSeance()">+ Ajouter une séance</button>
+        <button class="btn btn-outline no-print" onclick="ajouterLigneSeance()">+ Ajouter une séance</button>
 
-        <h2>6. Évaluation &amp; Ressources</h2>
+        <h2>6. Évaluation & Ressources</h2>
         <div class="grid-2">
             <div class="form-group">
                 <label>Modalités d'évaluation :</label>
-                <textarea id="evaluation" placeholder="Évaluation formative en interprétation vocale (grille critériée : tenue de rythme, timbre, intonation) + Évaluation d'écoute..." oninput="autoNotif()"></textarea>
+                <textarea id="evaluation" placeholder="Évaluation pratique en groupes (chant + percussions corporelles) + Évaluation écrite individuelle (écoute, vocabulaire et HDA)..." oninput="autoNotif()"></textarea>
             </div>
             <div class="form-group">
                 <label>Ressources et Matériel :</label>
-                <textarea id="ressources" placeholder="Audio/Video, fiches d'écoute, instruments de la salle, sonorisation..." oninput="autoNotif()"></textarea>
+                <textarea id="ressources" placeholder="Vidéoprojecteur, fiches d'écoute, fiches de chant Si Ma Ma Ka, grilles d'évaluation..." oninput="autoNotif()"></textarea>
             </div>
         </div>
     </div>
 
-    <!-- DOCUMENT PRÊT À IMPRIMER -->
+    <!-- DOCUMENT PRÊT À IMPRIMER / AFFICHER -->
     <div id="apercu">
         <div class="rendu-document" id="corpsDocument"></div>
     </div>
@@ -342,11 +337,11 @@
 
 <script>
     const inputsForm = ['etablissement', 'academie', 'anneeScolaire', 'enseignant', 'classe', 'dateRedaction', 'niveau', 'numSeq', 'duree', 'titre', 'problematique', 'oeuvreRef', 'oeuvresComp', 'projetMusical', 'histoireDesArts', 'vocabulaire', 'evaluation', 'ressources'];
-    let seanceCounter = 0;
 
     function filtrerTout() {
         const niveau = document.getElementById('niveau').value;
         const isCycle3 = (niveau === '6ème');
+        
         document.querySelectorAll('.bloc-cycle3').forEach(el => el.style.display = isCycle3 ? 'block' : 'none');
         document.querySelectorAll('.bloc-cycle4').forEach(el => el.style.display = isCycle3 ? 'none' : 'block');
     }
@@ -356,12 +351,11 @@
     }
 
     function ajouterLigneSeance(valeurs) {
-        seanceCounter++;
         const tbody = document.getElementById('corpsTableSeances');
         const tr = document.createElement('tr');
         const v = valeurs || { objectif: '', activites: '', support: '' };
         tr.innerHTML = `
-            <td class="col-num">${document.querySelectorAll('#corpsTableSeances tr').length + 1}</td>
+            <td class="col-num">${tbody.children.length + 1}</td>
             <td><textarea class="seance-objectif" oninput="autoNotif()">${escHtml(v.objectif)}</textarea></td>
             <td><textarea class="seance-activites" oninput="autoNotif()">${escHtml(v.activites)}</textarea></td>
             <td><textarea class="seance-support" oninput="autoNotif()">${escHtml(v.support)}</textarea></td>
@@ -407,18 +401,21 @@
 
         html += `<h2>Problématique</h2><p><em>${escHtml(document.getElementById('problematique').value) || 'Non renseignée'}</em></p>`;
 
-        // Objectifs retenus
+        // Attendus
         let attendus = [];
-        document.querySelectorAll('input[name="attendu"]:checked, input[name="attendu_sub"]:checked').forEach(cb => {
+        const isCycle3 = (document.getElementById('niveau').value === '6ème');
+        const selector = isCycle3 ? '.bloc-cycle3' : '.bloc-cycle4';
+        
+        document.querySelectorAll(`${selector} input[name="attendu"]:checked, ${selector} input[name="attendu_sub"]:checked`).forEach(cb => {
             attendus.push(`<div class="item-choix">${escHtml(cb.value)}</div>`);
         });
         if (attendus.length > 0) {
             html += `<h2>Objectifs &amp; Attendus institutionnels (Éduscol)</h2>` + attendus.join('');
         }
 
-        // Compétences
+        // Compétences / Domaines
         let comps = [];
-        document.querySelectorAll('input[name="compDet"]:checked').forEach(cb => {
+        document.querySelectorAll(`${selector} input[name="compDet"]:checked`).forEach(cb => {
             comps.push(`<div class="item-choix">${escHtml(cb.value)}</div>`);
         });
         if (comps.length > 0) {
@@ -455,7 +452,9 @@
         let nom = document.getElementById('nomSauvegarde').value.trim() || ("Seq_" + (document.getElementById('titre').value || "SansTitre"));
         let data = { inputs: {}, checkboxes: [], seances: [] };
         inputsForm.forEach(id => data.inputs[id] = document.getElementById(id).value);
+        
         document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => data.checkboxes.push(cb.value));
+        
         document.querySelectorAll('#corpsTableSeances tr').forEach(tr => {
             data.seances.push({
                 objectif: tr.querySelector('.seance-objectif').value,
@@ -463,6 +462,7 @@
                 support: tr.querySelector('.seance-support').value
             });
         });
+
         localStorage.setItem('seq_em_' + nom, JSON.stringify(data));
         document.getElementById('saveStatus').innerText = "💾 Enregistré sous : " + nom;
         chargerListeSauvegardes();
@@ -477,9 +477,9 @@
                 let name = key.replace('seq_em_', '');
                 let item = document.createElement('div');
                 item.className = 'saved-item';
-                item.innerHTML = `<span class="saved-item-name">${name}</span>
-                    <button class="saved-item-btn btn-primary" onclick="chargerSequence('${key}')">Ouvrir</button>
-                    <button class="saved-item-btn btn-danger" onclick="supprimerSauvegarde('${key}')">✕</button>`;
+                item.innerHTML = `<span class="saved-item-name">${escHtml(name)}</span>
+                    <button class="saved-item-btn btn-primary" onclick="chargerSequence('${key.replace(/'/g, "\\'")}')">Ouvrir</button>
+                    <button class="saved-item-btn btn-danger" onclick="supprimerSauvegarde('${key.replace(/'/g, "\\'")}')">✕</button>`;
                 liste.appendChild(item);
             }
         }
@@ -488,26 +488,34 @@
     function chargerSequence(key) {
         const data = JSON.parse(localStorage.getItem(key));
         inputsForm.forEach(id => { if (data.inputs[id] !== undefined) document.getElementById(id).value = data.inputs[id]; });
+        
         filtrerTout();
         document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        
         if (data.checkboxes) {
             data.checkboxes.forEach(val => {
-                let cb = document.querySelector(`input[value="${CSS.escape(val)}"]`);
-                if (cb) cb.checked = true;
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                    if (cb.value === val) cb.checked = true;
+                });
             });
         }
+
         document.getElementById('corpsTableSeances').innerHTML = '';
         if (data.seances) data.seances.forEach(s => ajouterLigneSeance(s));
+        
         document.getElementById('nomSauvegarde').value = key.replace('seq_em_', '');
         document.getElementById('saveStatus').innerText = "🟢 Séquence chargée";
     }
 
     function supprimerSauvegarde(key) {
-        if (confirm("Supprimer la sauvegarde ?")) { localStorage.removeItem(key); chargerListeSauvegardes(); }
+        if (confirm("Supprimer cette sauvegarde ?")) { 
+            localStorage.removeItem(key); 
+            chargerListeSauvegardes(); 
+        }
     }
 
     function nouvelleSequence() {
-        if (confirm("Réinitialiser le formulaire ?")) {
+        if (confirm("Réinitialiser l'ensemble du formulaire ?")) {
             inputsForm.forEach(id => document.getElementById(id).value = '');
             document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
             document.getElementById('corpsTableSeances').innerHTML = '';
@@ -530,7 +538,9 @@
     window.addEventListener('DOMContentLoaded', () => {
         filtrerTout();
         chargerListeSauvegardes();
-        if (document.querySelectorAll('#corpsTableSeances tr').length === 0) ajouterLigneSeance();
+        if (document.querySelectorAll('#corpsTableSeances tr').length === 0) {
+            ajouterLigneSeance();
+        }
     });
 </script>
 </body>
