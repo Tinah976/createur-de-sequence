@@ -82,6 +82,16 @@ textarea { height: 70px; resize: vertical; }
 .bloc-cycle3, .bloc-cycle4 { display: none; }
 .badge-c3 { background: #eff6ff; color: #1e40af; border-left: 4px solid #2563eb; padding: 8px 12px; font-weight: bold; font-size: 12px; margin-bottom: 12px; }
 .badge-c4 { background: #fef2f2; color: #991b1b; border-left: 4px solid #dc2626; padding: 8px 12px; font-weight: bold; font-size: 12px; margin-bottom: 12px; }
+.socle-tag { display: inline-block; background: #eef2ff; color: #3730a3; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; text-transform: none; }
+.exemple-box { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 10px 12px; margin: 6px 0 16px 0; font-size: 12px; color: #78350f; line-height: 1.5; }
+.exemple-box strong { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; color: #92400e; }
+.btn-insert { display: inline-block; margin-top: 6px; padding: 4px 10px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; background: #f59e0b; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+.btn-insert:hover { background: #d97706; }
+.hda-theme { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 12px; margin-bottom: 10px; }
+.hda-theme summary { font-weight: 700; font-size: 12.5px; color: #166534; cursor: pointer; }
+.hda-theme .hda-sub { font-size: 12px; color: #334155; margin: 6px 0; line-height: 1.5; }
+.hda-theme .hda-lien { font-size: 10.5px; color: #15803d; font-weight: 700; text-transform: uppercase; margin-top: 4px; }
+.source-tag { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; margin-left: 6px; }
 
 /* CARTES DES SÉANCES */
 .seance-card { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); position: relative; }
@@ -188,69 +198,158 @@ textarea { height: 70px; resize: vertical; }
   </div>
 
   <!-- ③ RÉFÉRENTIEL -->
-  <h2>③ Référentiel Pédagogique (Éduscol)</h2>
-  
+  <h2>③ Référentiel Pédagogique (Éduscol / BO)</h2>
+
   <h3>1. Attendus de fin de cycle</h3>
   <div class="checkbox-group">
     <div class="bloc-cycle3" data-section="attendus">
-      <div class="badge-c3">ATTENDUS (CYCLE 3)</div>
+      <div class="badge-c3">ATTENDUS DE FIN DE CYCLE — CYCLE 3</div>
       <div class="checkbox-item"><input type="checkbox" name="attendu" value="Identifier, choisir et mobiliser les techniques vocales et corporelles au service du sens et de l'expression." onchange="autoNotif()"><label>1. Identifier, choisir et mobiliser les techniques vocales et corporelles au service du sens et de l'expression.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Mettre en lien des caractéristiques musicales d'œuvres différentes..." onchange="autoNotif()"><label>2. Mettre en lien des caractéristiques musicales d'œuvres différentes...</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Explorer les sons de la voix, de l'environnement immédiat et de la nature..." onchange="autoNotif()"><label>3. Explorer les sons de la voix, de l'environnement immédiat et de la nature...</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Développer sa sensibilité, son esprit critique et s'enrichir..." onchange="autoNotif()"><label>4. Développer sa sensibilité, son esprit critique...</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Mettre en lien des caractéristiques musicales d'œuvres différentes, les nommer et les présenter en lien avec d'autres savoirs construits par les enseignements (histoire, géographie, français, sciences etc.)." onchange="autoNotif()"><label>2. Mettre en lien des caractéristiques musicales d'œuvres différentes, les nommer et les présenter en lien avec d'autres savoirs construits par les enseignements (histoire, géographie, français, sciences etc.).</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Explorer les sons de la voix et de son environnement, imaginer des utilisations musicales, créer des organisations dans le temps d'un ensemble de sons sélectionnés." onchange="autoNotif()"><label>3. Explorer les sons de la voix et de son environnement, imaginer des utilisations musicales, créer des organisations dans le temps d'un ensemble de sons sélectionnés.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Développer sa sensibilité, son esprit critique et s'enrichir de la diversité des gouts personnels et des esthétiques." onchange="autoNotif()"><label>4. Développer sa sensibilité, son esprit critique et s'enrichir de la diversité des gouts personnels et des esthétiques.</label></div>
     </div>
     <div class="bloc-cycle4" data-section="attendus">
-      <div class="badge-c4">ATTENDUS (CYCLE 4)</div>
+      <div class="badge-c4">ATTENDUS DE FIN DE CYCLE — CYCLE 4</div>
       <div class="checkbox-item"><input type="checkbox" name="attendu" value="Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création." onchange="autoNotif()"><label>1. Mobiliser des techniques vocales et corporelles au service d'un projet d'interprétation ou de création.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Identifier, décrire, commenter une organisation musicale complexe et la situer..." onchange="autoNotif()"><label>2. Identifier, décrire, commenter une organisation musicale complexe...</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Concevoir, créer et réaliser des pièces musicales en référence à des styles..." onchange="autoNotif()"><label>3. Concevoir, créer et réaliser des pièces musicales...</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Présenter et justifier des choix d'interprétation et de création..." onchange="autoNotif()"><label>4. Présenter et justifier des choix d'interprétation et de création...</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références musicales et artistiques diversifiées." onchange="autoNotif()"><label>2. Identifier, décrire, commenter une organisation musicale complexe et la situer dans un réseau de références musicales et artistiques diversifiées.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Concevoir, créer et réaliser des pièces musicales en référence à des styles, des œuvres, des contraintes d'interprétation ou de diffusion." onchange="autoNotif()"><label>3. Concevoir, créer et réaliser des pièces musicales en référence à des styles, des œuvres, des contraintes d'interprétation ou de diffusion.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="attendu" value="Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre et défendre un point de vue dans l'argumentation." onchange="autoNotif()"><label>4. Présenter et justifier des choix d'interprétation et de création, justifier un avis sur une œuvre et défendre un point de vue dans l'argumentation.</label></div>
     </div>
   </div>
 
   <h3>2. Sélectionner les Compétences travaillées</h3>
   <div class="checkbox-group">
     <div class="bloc-cycle4" data-section="competences">
-      <div class="badge-c4">COMPÉTENCES (CYCLE 4)</div>
-      <h4>1. Réaliser des projets musicaux</h4>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Définir les caractéristiques musicales d'un projet, puis en assurer la mise en œuvre." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Définir les caractéristiques musicales d'un projet, puis en assurer la mise en œuvre.</label></div>
+      <div class="badge-c4">COMPÉTENCES TRAVAILLÉES — CYCLE 4</div>
+
+      <h4>1. Réaliser des projets musicaux d'interprétation ou de création <span class="socle-tag">Domaines du socle : 1, 3, 5</span></h4>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Définir les caractéristiques musicales d'un projet, puis en assurer la mise en œuvre en mobilisant les ressources adaptées." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Définir les caractéristiques musicales d'un projet, puis en assurer la mise en œuvre en mobilisant les ressources adaptées.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Définir les caractéristiques expressives d'un projet, puis en assurer la mise en œuvre." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Définir les caractéristiques expressives d'un projet, puis en assurer la mise en œuvre.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Réaliser des projets musicaux dans un cadre collectif (classe), en petit groupe ou individuellement." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Réaliser des projets musicaux dans un cadre collectif (classe), en petit groupe ou individuellement.</label></div>
       <div class="checkbox-item"><input type="checkbox" name="compDet" value="Interpréter un projet devant d'autres élèves et présenter les choix artistiques effectués." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Interpréter un projet devant d'autres élèves et présenter les choix artistiques effectués.</label></div>
       <div class="checkbox-item"><input type="checkbox" name="compDet" value="Tenir sa partie dans un contexte polyphonique." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Tenir sa partie dans un contexte polyphonique.</label></div>
-      <h4>2. Écouter, comparer, construire une culture commune</h4>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Analyser des œuvres musicales en utilisant un vocabulaire précis." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Analyser des œuvres musicales en utilisant un vocabulaire précis.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Situer et comparer des musiques de styles proches ou éloignés..." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Situer et comparer des musiques de styles proches ou éloignés...</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier par comparaison les différences et ressemblances dans l'interprétation..." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Identifier par comparaison les différences et ressemblances dans l'interprétation...</label></div>
-      <h4>3. Explorer, imaginer, créer et produire</h4>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Réutiliser certaines caractéristiques d'une œuvre connue pour nourrir son travail." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Réutiliser certaines caractéristiques d'une œuvre connue pour nourrir son travail.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Concevoir, réaliser, arranger, pasticher une courte pièce préexistante." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Concevoir, réaliser, arranger, pasticher une courte pièce préexistante.</label></div>
-      <h4>4. Échanger, partager, argumenter et débattre</h4>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Porter un regard critique sur sa production individuelle." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Porter un regard critique sur sa production individuelle.</label></div>
+      <div class="exemple-box"><strong>💡 Exemples de situations, d'activités et de ressources (Éduscol)</strong>Interprétation de projets musicaux : jeux de parodie, de pastiche, de transformation en jouant sur les différents paramètres de la musique. Recherches prosodiques par création de texte sur une chanson préexistante. Recherche et comparaison d'interprétations disponibles sur internet d'une chanson travaillée en classe. Réalisation de courtes créations (voix, sources sonores acoustiques et électroniques diverses) dans le style étudié par ailleurs. Réalisation par petits groupes de créations numériques sur cahier des charges et comparaison des réalisations interprétées.
+        <button type="button" class="btn-insert" onclick="inserer('projetMusical', document.getElementById('exReal').innerText)">+ Insérer dans « Projet musical »</button>
+        <span id="exReal" style="display:none">Interprétation de projets musicaux : jeux de parodie, de pastiche, de transformation en jouant sur les différents paramètres de la musique. Recherches prosodiques par création de texte sur une chanson préexistante. Recherche et comparaison d'interprétations disponibles sur internet d'une chanson travaillée en classe. Réalisation de courtes créations (voix, sources sonores acoustiques et électroniques diverses) dans le style étudié par ailleurs. Réalisation par petits groupes de créations numériques sur cahier des charges et comparaison des réalisations interprétées.</span>
+      </div>
+
+      <h4>2. Écouter, comparer, construire une culture musicale et artistique <span class="socle-tag">Domaines du socle : 1, 2, 5</span></h4>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Mobiliser sa mémoire sur des objets musicaux longs et complexes." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Mobiliser sa mémoire sur des objets musicaux longs et complexes.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Situer et comparer des musiques de styles proches ou éloignés dans l'espace et/ou dans le temps pour construire des repères techniques et culturels." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Situer et comparer des musiques de styles proches ou éloignés dans l'espace et/ou dans le temps pour construire des repères techniques et culturels.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Mettre en lien des caractéristiques musicales et des marqueurs esthétiques avec des contextes historiques, sociologiques, techniques et culturels." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Mettre en lien des caractéristiques musicales et des marqueurs esthétiques avec des contextes historiques, sociologiques, techniques et culturels.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Mobiliser des repères permettant d'identifier les principaux styles musicaux." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Mobiliser des repères permettant d'identifier les principaux styles musicaux.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Associer des références relevant d'autres domaines artistiques aux œuvres musicales étudiées." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Associer des références relevant d'autres domaines artistiques aux œuvres musicales étudiées.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier par comparaison les différences et ressemblances dans l'interprétation d'une œuvre donnée." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Identifier par comparaison les différences et ressemblances dans l'interprétation d'une œuvre donnée.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Percevoir et décrire les qualités artistiques et techniques d'un enregistrement." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Percevoir et décrire les qualités artistiques et techniques d'un enregistrement.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Manipuler plusieurs formes de représentation graphique de la musique à l'aide d'outils numériques." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Manipuler plusieurs formes de représentation graphique de la musique à l'aide d'outils numériques.</label></div>
+      <div class="exemple-box"><strong>💡 Exemples de situations, d'activités et de ressources (Éduscol)</strong>Commentaire comparé portant sur plusieurs extraits : d'une même œuvre ; d'œuvres différentes esthétiquement proches ou éloignées ; de plusieurs interprétations d'une même pièce ; d'une version concert et d'une version studio d'une même pièce ; de plusieurs standards numériques d'enregistrement et de diffusion (MP3, Wav). Recherche orientée sur internet sur un type de formation musicale, une catégorie, un style, une culture de présentation argumentée des choix effectués. Recherche d'œuvres et élaboration d'une « playlist » répondant à un ensemble de critères. Montage numérique de brefs extraits audio relevant d'œuvres et d'esthétiques différentes dans une nouvelle perspective de création ; présentation, comparaison à d'autres choix, argumentation. Recherche d'associations originales entre musique et image animée : recherche, expérimentation, choix, montage, présentation, comparaison, argumentation. Recherches sur la physiologie de l'audition et la physique du son ; réflexion sur l'impact des situations sociales (environnement sonore urbain, écoute au casque, concerts, etc.) sur la santé auditive.
+        <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', document.getElementById('exEcoute').innerText)">+ Insérer dans « Histoire des Arts / Ouverture »</button>
+        <span id="exEcoute" style="display:none">Commentaire comparé portant sur plusieurs extraits : d'une même œuvre ; d'œuvres différentes esthétiquement proches ou éloignées ; de plusieurs interprétations d'une même pièce ; d'une version concert et d'une version studio d'une même pièce ; de plusieurs standards numériques d'enregistrement et de diffusion (MP3, Wav). Recherche orientée sur internet sur un type de formation musicale, une catégorie, un style, une culture de présentation argumentée des choix effectués. Recherche d'œuvres et élaboration d'une « playlist » répondant à un ensemble de critères.</span>
+      </div>
+
+      <h4>3. Explorer, imaginer, créer et produire <span class="socle-tag">Domaines du socle : 1, 2, 5</span></h4>
+      <h5 class="subdom">Dans le domaine de la production</h5>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Réutiliser certaines caractéristiques (style, technique, etc.) d'une œuvre connue pour nourrir son travail." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Réutiliser certaines caractéristiques (style, technique, etc.) d'une œuvre connue pour nourrir son travail.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Concevoir, réaliser, arranger, pasticher une courte pièce préexistante, notamment à l'aide d'outils numériques." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Concevoir, réaliser, arranger, pasticher une courte pièce préexistante, notamment à l'aide d'outils numériques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier les leviers permettant d'améliorer et/ou modifier le travail de création entrepris." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Identifier les leviers permettant d'améliorer et/ou modifier le travail de création entrepris.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Mobiliser à bon escient un système de codage pour organiser son travail." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Mobiliser à bon escient un système de codage pour organiser son travail.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="S'autoévaluer à chaque étape du travail.​" onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• S'autoévaluer à chaque étape du travail.</label></div>
+      <h5 class="subdom">Dans le domaine de la perception</h5>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier, rechercher et mobiliser à bon escient les ressources documentaires (écrites, enregistrées notamment) nécessaires à la réalisation d'un projet." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Identifier, rechercher et mobiliser à bon escient les ressources documentaires (écrites, enregistrées notamment) nécessaires à la réalisation d'un projet.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Réinvestir ses expériences personnelles de la création musicale pour écouter, comprendre et commenter celles des autres." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Réinvestir ses expériences personnelles de la création musicale pour écouter, comprendre et commenter celles des autres.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Concevoir une succession (« playlist ») d'œuvres musicales répondant à des objectifs artistiques." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Concevoir une succession (« playlist ») d'œuvres musicales répondant à des objectifs artistiques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="S'autoévaluer à chaque étape du travail." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• S'autoévaluer à chaque étape du travail.</label></div>
+
+      <h4>4. Échanger, partager, argumenter et débattre <span class="socle-tag">Domaines du socle : 1, 3, 5</span></h4>
+      <h5 class="subdom">Dans le domaine de la production</h5>
       <div class="checkbox-item"><input type="checkbox" name="compDet" value="Développer une critique constructive sur une production collective." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Développer une critique constructive sur une production collective.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Porter un regard critique sur sa production individuelle." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Porter un regard critique sur sa production individuelle.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Contribuer à l'élaboration collective de choix d'interprétation ou de création." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Contribuer à l'élaboration collective de choix d'interprétation ou de création.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Transférer sur un projet musical en cours ou à venir les conclusions d'un débat antérieur sur une œuvre ou une esthétique." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Transférer sur un projet musical en cours ou à venir les conclusions d'un débat antérieur sur une œuvre ou une esthétique.</label></div>
+      <h5 class="subdom">Dans le domaine de la perception</h5>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Problématiser l'écoute d'une ou plusieurs œuvres." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Problématiser l'écoute d'une ou plusieurs œuvres.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Distinguer appréciation subjective et description objective." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Distinguer appréciation subjective et description objective.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Argumenter une critique adossée à une analyse objective : respecter la sensibilité de chacun, s'enrichir de la diversité des goûts personnels et des esthétiques." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Argumenter une critique adossée à une analyse objective : respecter la sensibilité de chacun, s'enrichir de la diversité des goûts personnels et des esthétiques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Distinguer les postures de créateur, d'interprète et d'auditeur." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Distinguer les postures de créateur, d'interprète et d'auditeur.</label></div>
     </div>
+
     <div class="bloc-cycle3" data-section="competences">
-      <div class="badge-c3">COMPÉTENCES (CYCLE 3)</div>
-      <h4>1. Chanter et interpréter</h4>
+      <div class="badge-c3">COMPÉTENCES TRAVAILLÉES — CYCLE 3</div>
+
+      <h4>1. Chanter et interpréter <span class="socle-tag">Domaines du socle : 1, 5</span></h4>
       <div class="checkbox-item"><input type="checkbox" name="compDet" value="Reproduire et interpréter un modèle mélodique et rythmique." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Reproduire et interpréter un modèle mélodique et rythmique.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Interpréter un répertoire varié avec expressivité." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Interpréter un répertoire varié avec expressivité.</label></div>
-      <h4>2. Écouter, comparer et commenter</h4>
-      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Décrire et comparer des éléments sonores issus de contextes variés." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Décrire et comparer des éléments sonores issus de contextes variés.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Chanter une mélodie simple avec une intonation juste et une intention expressive." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Chanter une mélodie simple avec une intonation juste et une intention expressive.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Mémoriser et chanter par cœur un chant appris par imitation, soutenir un bref moment de chant en solo." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Mémoriser et chanter par cœur un chant appris par imitation, soutenir un bref moment de chant en solo.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Interpréter un chant avec expressivité en respectant plusieurs choix et contraintes précédemment indiqués." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Interpréter un chant avec expressivité en respectant plusieurs choix et contraintes précédemment indiqués.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Tenir sa partie dans un bref moment de polyphonie." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Tenir sa partie dans un bref moment de polyphonie.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Mobiliser son corps pour interpréter, le cas échéant avec des instruments." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Mobiliser son corps pour interpréter, le cas échéant avec des instruments.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier les difficultés rencontrées dans l'interprétation d'un chant." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Identifier les difficultés rencontrées dans l'interprétation d'un chant.</label></div>
+
+      <h4>2. Écouter, comparer et commenter <span class="socle-tag">Domaines du socle : 1, 3, 5</span></h4>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Décrire et comparer des éléments sonores issus de contextes musicaux, d'aires géographiques ou culturelles différents et dans un temps historique, contemporain, proche ou lointain." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Décrire et comparer des éléments sonores issus de contextes musicaux, d'aires géographiques ou culturelles différents et dans un temps historique, contemporain, proche ou lointain.</label></div>
       <div class="checkbox-item"><input type="checkbox" name="compDet" value="Identifier et nommer ressemblances et différences dans deux extraits musicaux." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Identifier et nommer ressemblances et différences dans deux extraits musicaux.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Repérer et nommer une organisation simple dans un extrait musical : répétition d'une mélodie, d'un motif rythmique, d'un thème, d'une partie caractéristique, etc. ; en déduire une forme simple (couplet/refrain, ABA par exemple)." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Repérer et nommer une organisation simple dans un extrait musical : répétition d'une mélodie, d'un motif rythmique, d'un thème, d'une partie caractéristique, etc. ; en déduire une forme simple (couplet/refrain, ABA par exemple).</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Associer la découverte d'une œuvre à des connaissances construites dans d'autres domaines enseignés." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Associer la découverte d'une œuvre à des connaissances construites dans d'autres domaines enseignés.</label></div>
+
+      <h4>3. Explorer, imaginer et créer <span class="socle-tag">Domaines du socle : 1, 4, 5</span></h4>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Expérimenter les paramètres du son et en imaginer en conséquence des utilisations possibles." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Expérimenter les paramètres du son et en imaginer en conséquence des utilisations possibles.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Imaginer des représentations graphiques pour organiser une succession de sons et d'évènements sonores." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Imaginer des représentations graphiques pour organiser une succession de sons et d'évènements sonores.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Inventer une organisation simple à partir de sources sonores sélectionnées (dont la voix) et l'interpréter." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Inventer une organisation simple à partir de sources sonores sélectionnées (dont la voix) et l'interpréter.</label></div>
+
+      <h4>4. Échanger, partager et argumenter <span class="socle-tag">Domaines du socle : 1, 3, 5</span></h4>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Exprimer ses gouts au-delà de son ressenti immédiat." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Exprimer ses gouts au-delà de son ressenti immédiat.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Écouter et respecter le point de vue des autres et l'expression de leur sensibilité." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Écouter et respecter le point de vue des autres et l'expression de leur sensibilité.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Argumenter un jugement sur une musique tout en respectant celui des autres." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Argumenter un jugement sur une musique tout en respectant celui des autres.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="compDet" value="Argumenter un choix dans la perspective d'une interprétation collective." onchange="actualiserSelecteursCompetences(); autoNotif();"><label>• Argumenter un choix dans la perspective d'une interprétation collective.</label></div>
     </div>
   </div>
 
   <h3>3. Sélectionner les Connaissances associées</h3>
   <div class="checkbox-group">
     <div class="bloc-cycle4">
-      <h5 class="subdom knowledge">Connaissances associées (Cycle 4)</h5>
-      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Répertoire de projets relevant d'esthétiques diverses." onchange="autoNotif()"><label>• Répertoire de projets relevant d'esthétiques diverses.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Vocabulaire et techniques de l'interprétation et de l'expression musicales." onchange="autoNotif()"><label>• Vocabulaire et techniques de l'interprétation et de l'expression musicales.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Lexiques du langage musical (timbre, dynamique, temps, forme...)." onchange="autoNotif()"><label>• Lexiques du langage musical (timbre, dynamique, temps, forme...).</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Grandes catégories musicales : musique vocale, instrumentale, etc." onchange="autoNotif()"><label>• Grandes catégories musicales : musique vocale, instrumentale, etc.</label></div>
+      <h5 class="subdom knowledge">Connaissances associées — Réaliser des projets musicaux (Cycle 4)</h5>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Répertoire de projets relevant d'esthétiques diverses (chanson actuelle, du patrimoine, non occidental ; air d'opéra, de comédie musicale, mélodie, etc.)." onchange="autoNotif()"><label>• Répertoire de projets relevant d'esthétiques diverses (chanson actuelle, du patrimoine, non occidental ; air d'opéra, de comédie musicale, mélodie, etc.).</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Vocabulaire et techniques de l'interprétation et de l'expression musicales (domaines de la dynamique, du phrasé, du timbre, du rythme, de la hauteur, de la forme, etc.)." onchange="autoNotif()"><label>• Vocabulaire et techniques de l'interprétation et de l'expression musicales (domaines de la dynamique, du phrasé, du timbre, du rythme, de la hauteur, de la forme, etc.).</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Outils numériques simples pour capter les sons (enregistrement), les manipuler (timbre) et les organiser dans le temps (séquence)." onchange="autoNotif()"><label>• Outils numériques simples pour capter les sons (enregistrement), les manipuler (timbre) et les organiser dans le temps (séquence).</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Démarches de création : chanson sur texte ou musique préexistants ; notions de prosodie." onchange="autoNotif()"><label>• Démarches de création : chanson sur texte ou musique préexistants ; notions de prosodie.</label></div>
+      <h5 class="subdom knowledge">Connaissances associées — Écouter, comparer, construire une culture musicale (Cycle 4)</h5>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Lexiques du langage musical (timbre et espace, dynamique, temps et rythme, forme, successif et simultané, styles), de l'interprétation et de l'enregistrement pour décrire et commenter la musique." onchange="autoNotif()"><label>• Lexiques du langage musical (timbre et espace, dynamique, temps et rythme, forme, successif et simultané, styles), de l'interprétation et de l'enregistrement pour décrire et commenter la musique.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Grandes catégories musicales : musique vocale, instrumentale, électroacoustique, mixte, etc." onchange="autoNotif()"><label>• Grandes catégories musicales : musique vocale, instrumentale, électroacoustique, mixte, etc.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Quelques grandes œuvres musicales représentatives du patrimoine français, européen, occidental et non occidental ; ensemble de marqueurs stylistiques." onchange="autoNotif()"><label>• Quelques grandes œuvres musicales représentatives du patrimoine français, européen, occidental et non occidental ; ensemble de marqueurs stylistiques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Ensemble de repères relatifs à l'histoire de la musique et des arts." onchange="autoNotif()"><label>• Ensemble de repères relatifs à l'histoire de la musique et des arts.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Diversité des postures du mélomane et du musicien : partager, écouter, jouer, créer." onchange="autoNotif()"><label>• Diversité des postures du mélomane et du musicien : partager, écouter, jouer, créer.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Fonctions de la musique dans la société ; interactions avec d'autres domaines artistiques." onchange="autoNotif()"><label>• Fonctions de la musique dans la société ; interactions avec d'autres domaines artistiques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Apports du numérique à la création et à la diffusion musicales." onchange="autoNotif()"><label>• Apports du numérique à la création et à la diffusion musicales.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Repères sur le monde professionnel de la musique et du spectacle vivant." onchange="autoNotif()"><label>• Repères sur le monde professionnel de la musique et du spectacle vivant.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Physiologie et fonctionnement de l'audition ; connaissance des risques." onchange="autoNotif()"><label>• Physiologie et fonctionnement de l'audition ; connaissance des risques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Environnement sonore et développement." onchange="autoNotif()"><label>• Environnement sonore et développement.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Notions d'acoustique et de physique du son ; notion de Décibel (Db), de compression du son." onchange="autoNotif()"><label>• Notions d'acoustique et de physique du son ; notion de Décibel (Db), de compression du son.</label></div>
     </div>
     <div class="bloc-cycle3">
-      <h5 class="subdom knowledge">Connaissances associées (Cycle 3)</h5>
+      <h5 class="subdom knowledge">Connaissances associées — Chanter et interpréter (Cycle 3)</h5>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Répertoire de chansons diverses." onchange="autoNotif()"><label>• Répertoire de chansons diverses.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Paramètres du son et techniques vocales pour en jouer de façon expressive." onchange="autoNotif()"><label>• Paramètres du son et techniques vocales pour en jouer de façon expressive.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Vocabulaire de l'expression : quelques nuances simples, tempo, caractère, etc." onchange="autoNotif()"><label>• Vocabulaire de l'expression : quelques nuances simples, tempo, caractère, etc.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Polyphonie : rôle complémentaire des parties simultanées." onchange="autoNotif()"><label>• Polyphonie : rôle complémentaire des parties simultanées.</label></div>
+      <h5 class="subdom knowledge">Connaissances associées — Écouter, comparer et commenter (Cycle 3)</h5>
       <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Vocabulaire simple pour décrire la musique." onchange="autoNotif()"><label>• Vocabulaire simple pour décrire la musique.</label></div>
-      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Paramètres du son et techniques vocales." onchange="autoNotif()"><label>• Paramètres du son et techniques vocales.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Méthodes pour comparer des musiques." onchange="autoNotif()"><label>• Méthodes pour comparer des musiques.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Repères simples dans le temps et dans l'espace." onchange="autoNotif()"><label>• Repères simples dans le temps et dans l'espace.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Quelques grandes œuvres du patrimoine." onchange="autoNotif()"><label>• Quelques grandes œuvres du patrimoine.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Principales caractéristiques de l'orchestre symphonique." onchange="autoNotif()"><label>• Principales caractéristiques de l'orchestre symphonique.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Formes de production variées : vocales, instrumentales, solistes." onchange="autoNotif()"><label>• Formes de production variées : vocales, instrumentales, solistes.</label></div>
+      <h5 class="subdom knowledge">Connaissances associées — Explorer, imaginer et créer (Cycle 3)</h5>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Développement du lexique pour décrire le son instrumental, le son vocal et les objets sonores dans les domaines de la hauteur, du timbre, de la durée, de l'intensité." onchange="autoNotif()"><label>• Développement du lexique pour décrire le son instrumental, le son vocal et les objets sonores dans les domaines de la hauteur, du timbre, de la durée, de l'intensité.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Diversité des matériaux sonores et catégories classées par caractéristiques dominantes." onchange="autoNotif()"><label>• Diversité des matériaux sonores et catégories classées par caractéristiques dominantes.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Les postures de l'explorateur du son puis du compositeur : produire, écouter, trier, choisir, organiser, composer." onchange="autoNotif()"><label>• Les postures de l'explorateur du son puis du compositeur : produire, écouter, trier, choisir, organiser, composer.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Le projet graphique (partition adaptée pour organiser la mémoire) et sa traduction sonore." onchange="autoNotif()"><label>• Le projet graphique (partition adaptée pour organiser la mémoire) et sa traduction sonore.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Les exigences de la musique collective : écoute de l'autre, respect de ses propositions." onchange="autoNotif()"><label>• Les exigences de la musique collective : écoute de l'autre, respect de ses propositions.</label></div>
+      <h5 class="subdom knowledge">Connaissances associées — Échanger, partager et argumenter (Cycle 3)</h5>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Notions de respect, de bienveillance, de tolérance." onchange="autoNotif()"><label>• Notions de respect, de bienveillance, de tolérance.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Vocabulaire adapté à l'expression et l'argumentation de son point de vue personnel sur la musique." onchange="autoNotif()"><label>• Vocabulaire adapté à l'expression et l'argumentation de son point de vue personnel sur la musique.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Conditions d'un travail collectif : concentration, écoute, respect, autoévaluation, etc." onchange="autoNotif()"><label>• Conditions d'un travail collectif : concentration, écoute, respect, autoévaluation, etc.</label></div>
+      <div class="checkbox-item"><input type="checkbox" name="connaissances" value="Règles et contraintes du travail musical collectif visant l'expression d'un avis partagé comme une production sonore de qualité." onchange="autoNotif()"><label>• Règles et contraintes du travail musical collectif visant l'expression d'un avis partagé comme une production sonore de qualité.</label></div>
     </div>
   </div>
 
@@ -297,6 +396,67 @@ textarea { height: 70px; resize: vertical; }
       <label>Ressources et Matériel :</label>
       <textarea id="ressources" placeholder="Fichiers audio/video, instruments de la salle, fiches de travail..." oninput="autoNotif()"></textarea>
     </div>
+  </div>
+
+  <!-- ⑦ HISTOIRE DES ARTS -->
+  <h2>⑦ Histoire des Arts <span class="source-tag">Cycle 4 — BO / Éduscol</span></h2>
+  <div class="checkbox-group" style="max-height:520px;">
+    <p style="font-size:12px; color:#64748b; margin-top:0;">Enseignement transversal et co-disciplinaire (cf. BO). Sélectionnez une thématique pour l'insérer directement dans le champ « Histoire des Arts & Ouverture culturelle » de la section ④.</p>
+
+    <h5 class="subdom">Attendus de fin de cycle (HDA)</h5>
+    <div class="checkbox-item" style="font-size:12px; color:#334155; display:block; margin-bottom:4px;">• Se rappeler et nommer quelques œuvres majeures, que l'élève sait rattacher à une époque et une aire de production et dont il dégage les éléments constitutifs en termes de matériau, de forme, de sens et de fonction.</div>
+    <div class="checkbox-item" style="font-size:12px; color:#334155; display:block; margin-bottom:4px;">• Comparer des œuvres d'art entre elles, en dégageant, par un raisonnement fondé, des filiations entre deux œuvres d'époques différentes ou des parentés entre deux œuvres de différente nature, contemporaine l'une de l'autre.</div>
+    <div class="checkbox-item" style="font-size:12px; color:#334155; display:block; margin-bottom:12px;">• Rendre compte en termes personnels d'une expérience artistique vécue, soit par la pratique soit comme spectateur.</div>
+
+    <h5 class="subdom">Les 8 thématiques transversales (cliquer pour développer)</h5>
+
+    <details class="hda-theme">
+      <summary>Th. 1 — Arts et société à l'époque antique et au haut Moyen Âge</summary>
+      <div class="hda-sub">De la ville antique à la ville médiévale. Formes et décor de l'architecture antique. Les mythes fondateurs et leur illustration. La représentation de la personne humaine.</div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.1 — Arts et société à l\'époque antique et au haut Moyen Âge : de la ville antique à la ville médiévale ; formes et décor de l\'architecture antique ; les mythes fondateurs et leur illustration ; la représentation de la personne humaine.')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 2 — Formes et circulations artistiques (IXe–XVe s.) <span class="socle-tag" style="background:#dcfce7;color:#166534;">🎵 lien musique</span></summary>
+      <div class="hda-sub">La question de l'image entre Orient et Occident : iconoclasme et discours de l'image. Architectures et décors civils, urbains, militaires et religieux au Moyen Âge. Les circulations de formes artistiques autour de la Méditerranée médiévale. <strong>Musique et texte(s) au Moyen Âge.</strong> Le manuscrit médiéval : matériau, calligraphie, développement de l'écriture musicale et enluminure.</div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.2 — Formes et circulations artistiques (IXe-XVe s.) : musique et texte(s) au Moyen Âge ; le manuscrit médiéval (matériau, calligraphie, développement de l\'écriture musicale et enluminure) ; circulations de formes artistiques autour de la Méditerranée médiévale.')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 3 — Le sacre de l'artiste (XIVe–début XVIIe s.) <span class="socle-tag" style="background:#dcfce7;color:#166534;">🎵 lien musique</span></summary>
+      <div class="hda-sub">L'artiste, ses inspirations et ses mécènes dans les cités-États italiennes : peintures, sculptures et architectures du Trecento au Cinquecento. Flandres, France et Italie : circulations des formes, des styles et des écoles. Naissance du multiple : la gravure et l'imprimerie. <strong>Nouveaux rapports entre poésie et musique : motets, chansons et madrigaux.</strong> Développement des arts du spectacle : le tragique, le sacré, le comique et la fête.</div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.3 — Le sacre de l\'artiste (XIVe-début XVIIe s.) : nouveaux rapports entre poésie et musique — motets, chansons et madrigaux ; développement des arts du spectacle (le tragique, le sacré, le comique et la fête).')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 4 — État, société et modes de vie (XIIIe–XVIIIe s.)</summary>
+      <div class="hda-sub">Définition et hiérarchie des genres artistiques. Changements dans l'habitat, le décor et le mobilier. Évolution du rapport à la nature : art du paysage, bestiaires et classifications. Danse populaire, danse de cour, danse stylisée. Évolution des sciences et techniques, évolution des arts.</div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.4 — État, société et modes de vie (XIIIe-XVIIIe s.) : danse populaire, danse de cour, danse stylisée ; évolution des sciences et techniques, évolution des arts.')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 5 — L'art au temps des Lumières et des révolutions (1750–1850)</summary>
+      <div class="hda-sub">Émergence des publics et de la critique, naissance des médias. Sensation et sensibilité. L'art, expression de la pensée politique. Foi dans le progrès et recours au passé.</div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.5 — L\'art au temps des Lumières et des révolutions (1750-1850) : émergence des publics et de la critique, naissance des médias ; l\'art, expression de la pensée politique.')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 6 — De la Belle Époque aux « années folles » : l'ère de l'avant-garde (1870–1930) <span class="socle-tag" style="background:#dcfce7;color:#166534;">🎵 lien musique</span></summary>
+      <div class="hda-sub">Paysages du réel, paysages intérieurs. <strong>Photographie, cinéma et enregistrement phonographique : un nouveau rapport au réel.</strong> La recherche des racines dans un monde qui s'ouvre : primitivismes, écoles nationales et régionalismes. <strong>Métropoles et spectacles nouveaux : jazz, cirque et music-hall.</strong></div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.6 — De la Belle Époque aux « années folles » (1870-1930) : l\'enregistrement phonographique, un nouveau rapport au réel ; métropoles et spectacles nouveaux — jazz, cirque et music-hall.')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 7 — Les arts entre liberté et propagande (1910–1945)</summary>
+      <div class="hda-sub">L'autonomie des formes et des couleurs à la naissance de l'abstraction. Art et pouvoir : contestation, dénonciation ou propagande. L'émancipation de la femme artiste. La « Fée électricité » dans les arts.</div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.7 — Les arts entre liberté et propagande (1910-1945) : art et pouvoir (contestation, dénonciation ou propagande) ; l\'émancipation de la femme artiste.')">+ Insérer</button>
+    </details>
+
+    <details class="hda-theme">
+      <summary>Th. 8 — Les arts à l'ère de la consommation de masse (de 1945 à nos jours) <span class="socle-tag" style="background:#dcfce7;color:#166534;">🎵 lien musique</span></summary>
+      <div class="hda-sub">Réalismes et abstractions : les arts face à la réalité contemporaine. Architecture et design : entre nouvelles technologies et nouveaux modes de vie. <strong>Un monde ouvert ? Les métissages artistiques à l'époque de la globalisation.</strong></div>
+      <button type="button" class="btn-insert" onclick="inserer('histoireDesArts', 'Th.8 — Les arts à l\'ère de la consommation de masse (de 1945 à nos jours) : un monde ouvert ? les métissages artistiques à l\'époque de la globalisation.')">+ Insérer</button>
+    </details>
   </div>
 </div>
 
@@ -413,6 +573,14 @@ function actualiserSelecteursCompetences() {
   });
 }
 
+function inserer(id, texte) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.value = el.value && el.value.trim() ? el.value.trim() + '\n' + texte : texte;
+  autoNotif();
+  el.focus();
+}
+
 function escHtml(str) {
   return str ? String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') : '';
 }
@@ -461,8 +629,8 @@ function genererFiche() {
   html += `<h2>Projet Pédagogique</h2><ul>`;
   if (document.getElementById('oeuvreRef').value) html += `<li><strong>Œuvre de référence :</strong> ${escHtml(document.getElementById('oeuvreRef').value)}</li>`;
   if (document.getElementById('oeuvresComp').value) html += `<li><strong>Œuvres comparatives :</strong> ${escHtml(document.getElementById('oeuvresComp').value)}</li>`;
-  if (document.getElementById('projetMusical').value) html += `<li><strong>Projet Musical :</strong> ${escHtml(document.getElementById('projetMusical').value)}</li>`;
-  if (document.getElementById('histoireDesArts').value) html += `<li><strong>Histoire des Arts :</strong> ${escHtml(document.getElementById('histoireDesArts').value)}</li>`;
+  if (document.getElementById('projetMusical').value) html += `<li><strong>Projet Musical :</strong> ${escHtml(document.getElementById('projetMusical').value).replace(/\n/g, '<br>')}</li>`;
+  if (document.getElementById('histoireDesArts').value) html += `<li><strong>Histoire des Arts :</strong> ${escHtml(document.getElementById('histoireDesArts').value).replace(/\n/g, '<br>')}</li>`;
   if (document.getElementById('vocabulaire').value) html += `<li><strong>Vocabulaire :</strong> ${escHtml(document.getElementById('vocabulaire').value)}</li>`;
   html += `</ul>`;
 
